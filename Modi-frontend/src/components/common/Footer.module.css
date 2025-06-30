@@ -1,0 +1,16 @@
+.footer_wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  height: 87px;
+  background-color: #fbf9f3;
+  margin: 0 auto;
+  padding: 23px 33px 38px 33px;
+}
+
+.footer_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

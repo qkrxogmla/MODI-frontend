@@ -6,12 +6,21 @@ import RecordDetailPage from "../pages/diary/RecordDetailPage";
 import LoginPage from "../pages/login/LoginPage";
 import MapPage from "../pages/map/MapPage";
 import MyPage from "../pages/mypage/MyPage";
+import SearchPage from "../pages/search/SearchPage";
 
 const Router = () => {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <HomePage />,
+    },
+    {
+      path: "/home",
+      element: <HomePage />,
+    },
+    {
+      path: "/search",
+      element: <SearchPage />,
     },
     {
       path: "/diary",
