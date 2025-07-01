@@ -1,0 +1,60 @@
+.tag {
+  display: flex;
+  width: 127px;
+  height: 32px;
+  padding: 4px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+  border-radius: 5.647px;
+  border: 0.941px solid var(--gray3, #9c9c9c);
+  background: var(--color1, #fbfbfb);
+}
+
+.inner-border {
+  width: 115.765px;
+  height: 22.588px;
+  flex-shrink: 0;
+  border-radius: 3.765px;
+  border: 0.941px solid;
+  background: var(--color1, #fbfbfb);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.label {
+  position: absolute;
+  right: 45.882px;
+  top: 5px;
+
+  color: #2c2c2c;
+  text-align: center;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: NanumSquareRound;
+  font-size: 14.118px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20.706px; /* 146.667% */
+  letter-spacing: -0.405px;
+}
+
+.momo {
+  border-color: #fbd7d5;
+}
+
+.boro {
+  border-color: #fee888;
+}
+
+.lumi {
+  border-color: #a7e1b6;
+}
+
+.zuni {
+  border-color: #93d1e0;
+}
