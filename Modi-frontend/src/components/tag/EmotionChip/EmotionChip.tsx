@@ -17,7 +17,7 @@ export default function EmotionChip({
         selected ? styles.selected : styles.unselected
       }`}
     >
-      {label}
+      <span className={styles.label}>{label}</span>
     </div>
   );
 }
