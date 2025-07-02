@@ -1,0 +1,48 @@
+.chip {
+  display: inline-flex;
+  height: 30px;
+  padding: 4px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border: 1px solid;
+  border-radius: 15px;
+}
+
+.label {
+  color: #2c2c2c;
+  font-feature-settings: "liga" off, "clig" off;
+
+  font-family: NanumSquareRound;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.momo {
+  --main-color: #fbd7d5;
+}
+
+.boro {
+  --main-color: #fee888;
+}
+
+.lumi {
+  --main-color: #a7e1b6;
+}
+
+.zuni {
+  --main-color: #93d1e0;
+}
+
+.selected {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.unselected {
+  background-color: white;
+  border-color: var(--main-color);
+}

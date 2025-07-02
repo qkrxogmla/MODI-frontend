@@ -1,0 +1,27 @@
+.container {
+  display: inline-flex;
+  padding: 6px 13px;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+
+  border-radius: 15px;
+  border: 1px solid var(--gray2, #cbcbc5);
+  background-color: #eeedeb;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  aspect-ratio: 1/1;
+}
+
+.label {
+  color: var(--gray4, #5c5c5c);
+  font-feature-settings: "liga" off, "clig" off;
+
+  font-family: NanumSquareRound;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
