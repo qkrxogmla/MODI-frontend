@@ -1,18 +1,18 @@
-import styles from "./Button.module.css";
+import styles from "./ButtonBar.module.css";
 
-interface ButtonProps {
+interface ButtonBarProps {
   label: string;
   onClick?: () => void;
   disabled?: boolean;
   size?: "primary" | "small";
 }
 
-export default function Button({
+export default function ButtonBar({
   label,
   onClick,
   disabled,
   size = "primary",
-}: ButtonProps) {
+}: ButtonBarProps) {
   return (
     <button
       className={`${styles.button} ${styles[size]}`}
