@@ -1,5 +1,11 @@
+import Footer from "../../components/common/Footer";
+
 const DiaryPage = () => {
-  return <div>DiaryPage</div>;
+  return (
+    <div>
+      <Footer />
+    </div>
+  );
 };
 
 export default DiaryPage;

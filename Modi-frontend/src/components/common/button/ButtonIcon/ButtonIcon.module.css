@@ -1,0 +1,14 @@
+.container {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: #eeedeb;
+  border: 1px solid #cbcbc5;
+}
+
+.icon {
+  width: 21.818px;
+  height: 21.818px;
+  flex-shrink: 0;
+}
