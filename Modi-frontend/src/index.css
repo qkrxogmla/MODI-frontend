@@ -71,3 +71,17 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@font-face {
+  font-family: "Ownglyph_ryurue-Rg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryurue-Rg.woff2")
+    format("woff2");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
+    format("woff");
+  font-style: normal;
+}
