@@ -12,12 +12,11 @@ import InitialSetting from "../pages/login/InitialSetting";
 
 import SearchPage from "../pages/search/SearchPage";
 
-
 const Router = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <HomePage />,
+      element: <LoginPage />,
     },
     {
       path: "/home",
@@ -39,11 +38,6 @@ const Router = () => {
       path: "/recorddetail",
       element: <RecordDetailPage />,
     },
-    {
-      path: "/login",
-      element: <LoginPage />,
-    },
-
     {
       path: "/map",
       element: <MapPage />,
