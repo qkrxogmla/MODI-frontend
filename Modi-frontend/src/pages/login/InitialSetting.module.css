@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("./login-background/initial-setting-bg.svg");
+  background-image: url("../../../public/images/login-background/initial-setting-bg.svg");
 }
 
 /* 닉네임 입력 영역 */
@@ -132,19 +132,19 @@
 
 /* 캐릭터 이미지 설정 */
 .momo {
-  background-image: url("./character/momo.svg");
+  background-image: url("../../../public/images/character-btn/momo.svg");
 }
 
 .boro {
-  background-image: url("./character/boro.svg");
+  background-image: url("../../../public/images/character-btn/boro.svg");
 }
 
 .lumi {
-  background-image: url("./character/lumi.svg");
+  background-image: url("../../../public/images/character-btn/lumi.svg");
 }
 
 .zuni {
-  background-image: url("./character/zuni.svg");
+  background-image: url("../../../public/images/character-btn/zuni.svg");
 }
 
 /* 캐릭터 선택 시 배경색 변경 */
