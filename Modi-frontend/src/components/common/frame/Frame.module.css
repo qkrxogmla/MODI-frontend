@@ -11,7 +11,7 @@
   gap: 16px;
   justify-content: center;
   align-items: center;
-  background-image: url("./frame-bg/basic-frame/star.svg"); /* 테스트용... */
+  background-image: url("../../public/images/frame-bg/basic-frame/star.svg"); /* 테스트용... */
   background-size: cover;
   background-position: center;
   border-radius: 13.3px;
@@ -72,57 +72,57 @@
 
 /* 프레임 배경화면
 .bg-pink {
-  background-image: url("./frame-bg/basic-frame/pink.svg");
+  background-image: url("../../public/images/frame-bg/pink.svg");
 }
 
 .bg-yellow {
-  background-image: url("./frame-bg/basic-frame/yellow.svg");
+  background-image: url("../../public/images/frame-bg/yellow.svg");
 }
 
 .bg-mint {
-  background-image: url("./frame-bg/basic-frame/mint.svg");
+  background-image: url("../../public/images/frame-bg/basic-frame/mint.svg");
 }
 
 .bg-skyblue {
-  background-image: url("./frame-bg/basic-frame/skyblue.svg");
+  background-image: url("../../public/images/frame-bg/basic-frame/skyblue.svg");
 }
 
 .bg-star {
-  background-image: url("./frame-bg/basic-frame/star.svg");
+  background-image: url("../../public/images/frame-bg/basic-frame/star.svg");
   background-size: cover;
   background-position: center;
 }
 
 .bg-small-dot {
-  background-image: url("./frame-bg/basic-frame/small-dot.svg");
+  background-image: url("../../public/images/frame-bg/basic-frame/small-dot.svg");
   background-size: cover;
   background-position: center;
 }
 
 .bg-cream {
-  background-image: url("./frame-bg/basic-frame/cream.svg");
+  background-image: url("../../public/images/frame-bg/basic-frame/cream.svg");
 }
 
 .bg-big-dot {
-  background-image: url("./frame-bg/basic-frame/big-dot.svg");
+  background-image: url("../../public/images/frame-bg/basic-frame/big-dot.svg");
   background-size: cover;
   background-position: center;
 } 
 
 .bg-ch1 {
-  background-image: url("./frame-bg/basic-frame/pink.svg");
+  background-image: url("../../public/images/frame-bg/basic-frame/pink.svg");
 }
 
 .bg-ch2 {
-  background-image: url("./frame-bg/basic-frame/yellow.svg");
+  background-image: url("../../public/images/frame-bg/basic-frame/yellow.svg");
 }
 
 .bg-ch3 {
-  background-image: url("./frame-bg/basic-frame/skyblue.svg");
+  background-image: url("../../public/images/frame-bg/basic-frame/skyblue.svg");
 }
 
 .bg-ch4 {
-  background-image: url("./frame-bg/basic-frame/mint.svg");
+  background-image: url("../../public/images/frame-bg/basic-frame/mint.svg");
 }
 
 */
