@@ -6,7 +6,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("/images/background/initial-setting-bg.svg");
+  background-image: url("/images/background/normal-bg.svg");
+}
+
+.initialSetting_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 닉네임 입력 영역 */

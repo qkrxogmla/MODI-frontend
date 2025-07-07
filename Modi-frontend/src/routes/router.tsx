@@ -6,11 +6,10 @@ import RecordDetailPage from "../pages/diary/RecordDetailPage";
 import LoginPage from "../pages/login/LoginPage";
 import MapPage from "../pages/map/MapPage";
 import MyPage from "../pages/mypage/MyPage";
-
 import Frame from "../components/common/frame/Frame";
 import InitialSetting from "../pages/login/InitialSetting";
-
 import SearchPage from "../pages/search/SearchPage";
+import DiaryEmotionTag from "../pages/diary/DiaryEmotionTag";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -29,6 +28,10 @@ const Router = () => {
     {
       path: "/diary",
       element: <DiaryPage />,
+    },
+    {
+      path: "/emotion",
+      element: <DiaryEmotionTag />,
     },
     {
       path: "/diarywrite",

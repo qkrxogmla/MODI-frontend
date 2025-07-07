@@ -13,6 +13,12 @@
   background-repeat: no-repeat;
 }
 
+.loginPage_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .googleLogin_btn {
   position: absolute;
   bottom: 46px;

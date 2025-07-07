@@ -10,10 +10,12 @@ const LoginPage = () => {
   };
 
   return (
-    <div className={styles.loginPage}>
-      <button className={styles.googleLogin_btn} onClick={handleGoogleLogin}>
-        <span>구글로 시작하기</span>
-      </button>
+    <div className={styles.loginPage_wrapper}>
+      <div className={styles.loginPage}>
+        <button className={styles.googleLogin_btn} onClick={handleGoogleLogin}>
+          <span>구글로 시작하기</span>
+        </button>
+      </div>
     </div>
   );
 };
