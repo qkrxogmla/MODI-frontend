@@ -6,7 +6,7 @@
   justify-content: center;
   width: 360px;
   height: 800px;
-  background-image: url("../../../public/images/background.svg");
+  background-image: url("/images/background.svg");
 }
 
 .TopBar {
