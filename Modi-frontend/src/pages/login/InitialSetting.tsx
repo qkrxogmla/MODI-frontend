@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import Header from "../../components/common/Header";
 import styles from "./InitialSetting.module.css";
 
 const InitialSetting = () => {
@@ -16,6 +17,7 @@ const InitialSetting = () => {
   return (
     <div className={styles.initialSetting_wrapper}>
       <div className={styles.initialSetting}>
+        <Header />
         <div className={styles.nicknameInput}>
           <div className={styles.nicknameInput_title}>
             닉네임을 입력해주세요
