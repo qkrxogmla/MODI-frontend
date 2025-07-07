@@ -55,6 +55,10 @@ const Router = () => {
       path: "/test-initialsetting",
       element: <InitialSetting />,
     },
+    {
+      path: "/test-recorddetail",
+      element: <RecordDetailPage />,
+    },
   ]);
   return <RouterProvider router={router} />;
 };

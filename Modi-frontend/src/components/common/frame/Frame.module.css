@@ -5,8 +5,8 @@
   flex-direction: column;
   position: relative;
   box-sizing: border-box;
-  width: 259px;
-  height: 337px;
+  width: 260px;
+  height: 338px;
   padding: 16px;
   gap: 16px;
   justify-content: center;
@@ -37,6 +37,7 @@
   height: 100%;
   object-fit: cover; /* 이미지가 .image-frame 안에 꽉 차도록 */
   border-radius: 2.85px;
+  border: none;
 }
 
 /* 프레임 생성 날짜 -> state 로 추출 */
