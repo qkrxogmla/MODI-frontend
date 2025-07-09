@@ -17,12 +17,11 @@
 
 .main_container {
   width: 100%;
-  position: absolute;
+  height: 100%;
+  padding: 143px 32px 0 32px;
   display: flex;
   flex-direction: column;
-  top: 143px;
   box-sizing: border-box;
-  padding-left: 32px;
 }
 
 .ask {
@@ -62,9 +61,4 @@
   font-size: 10.87px;
   line-height: 14.49px;
   text-align: center;
-}
-
-.다음 {
-  position: absolute;
-  bottom: 5px;
 }

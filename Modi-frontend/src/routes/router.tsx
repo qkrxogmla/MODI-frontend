@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "../pages/home/HomePage";
-import DiaryPage from "../pages/diary/DiaryPage";
 import DiaryWritePage from "../pages/diary/DiaryWritePage";
 import RecordDetailPage from "../pages/diary/RecordDetailPage";
 import LoginPage from "../pages/login/LoginPage";
@@ -24,10 +23,6 @@ const Router = () => {
     {
       path: "/search",
       element: <SearchPage />,
-    },
-    {
-      path: "/diary",
-      element: <DiaryPage />,
     },
     {
       path: "/emotion",
