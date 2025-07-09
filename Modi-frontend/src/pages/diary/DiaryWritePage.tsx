@@ -1,5 +1,11 @@
+import styles from "./DiaryWritePage.module.css";
+
 const DiaryWritePage = () => {
-  return <div>DiaryWritePage</div>;
+  return (
+    <div className={styles.DiaryWrite_wrapper}>
+      <div className={styles.DiaryWrite_container}></div>
+    </div>
+  );
 };
 
 export default DiaryWritePage;
