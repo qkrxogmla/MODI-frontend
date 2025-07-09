@@ -14,6 +14,7 @@
   justify-content: center;
   background-image: url("/images/background/normal-bg.svg");
 }
+
 .main_container {
   width: 100%;
   position: absolute;
@@ -30,4 +31,35 @@
   font-weight: 600;
   line-height: 25px;
   letter-spacing: -0.43px;
+}
+
+.img_container {
+  white-space: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.emotion_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.emotion_image {
+  width: 62px;
+  height: 62px;
+  cursor: pointer;
+}
+
+.emotion_label {
+  margin-bottom: 5px;
+  font-family: var(--font-nanum-square);
+  font-weight: 400;
+  font-size: 10.87px;
+  line-height: 14.49px;
+  text-align: center;
 }
