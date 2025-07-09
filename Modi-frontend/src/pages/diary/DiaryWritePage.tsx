@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import EXIF from "exif-js";
+import ExifReader from "exifreader";
 import styles from "./DiaryWritePage.module.css";
 import Header from "../../components/common/Header";
 import PrimaryButton from "../../components/common/button/ButtonBar/PrimaryButton";
@@ -17,32 +17,44 @@ const DiaryWritePage = () => {
     if (!file) return;
 
     const reader = new FileReader();
-    reader.onload = () => {
+    reader.onload = async () => {
       const imageUrl = reader.result as string;
       setImagePreview(imageUrl);
 
-      const img = new Image();
-      img.src = imageUrl;
+      // GPS 정보 추출
+      const arrayBuffer = await file.arrayBuffer();
+      const tags = await ExifReader.load(arrayBuffer);
 
-      img.onload = () => {
-        EXIF.getData(img, function () {
-          const lat = EXIF.getTag(this, "GPSLatitude");
-          const lon = EXIF.getTag(this, "GPSLongitude");
-          const latRef = EXIF.getTag(this, "GPSLatitudeRef") || "N";
-          const lonRef = EXIF.getTag(this, "GPSLongitudeRef") || "E";
+      console.log("EXIF 태그:", tags);
 
-          if (lat && lon) {
-            const latitude = convertDMSToDD(lat, latRef);
-            const longitude = convertDMSToDD(lon, lonRef);
-            reverseGeocode(latitude, longitude);
-          } else {
-            alert("사진에 GPS 정보가 없어요.");
-          }
-        });
-      };
+      const latRaw = tags["GPSLatitude"]?.value as [number, number][];
+      const lonRaw = tags["GPSLongitude"]?.value as [number, number][];
+
+      if (
+        Array.isArray(latRaw) &&
+        Array.isArray(lonRaw) &&
+        latRaw.length === 3 &&
+        lonRaw.length === 3
+      ) {
+        // [ [37,1], [17,1], [383,10] ] 구조
+        const parse = (dms: [number, number][]): number[] =>
+          dms.map(([num, den]) => num / den);
+
+        const lat = parse(latRaw);
+        const lon = parse(lonRaw);
+
+        const latRef = tags["GPSLatitudeRef"]?.description || "N";
+        const lonRef = tags["GPSLongitudeRef"]?.description || "E";
+
+        const latitude = convertDMSToDD(lat, latRef);
+        const longitude = convertDMSToDD(lon, lonRef);
+        reverseGeocode(latitude, longitude);
+      } else {
+        alert("GPS 데이터 형식이 잘못되었거나 없습니다.");
+      }
     };
 
-    reader.readAsDataURL(file); // FileReader로 base64 로딩
+    reader.readAsDataURL(file);
   };
 
   const convertDMSToDD = (dms: number[], ref: string) => {
@@ -63,7 +75,7 @@ const DiaryWritePage = () => {
         `https://dapi.kakao.com/v2/local/geo/coord2address.json?x=${lon}&y=${lat}`,
         {
           headers: {
-            Authorization: kakaoKey as string,
+            Authorization: `KakaoAK ${kakaoKey}`,
           },
         }
       );
