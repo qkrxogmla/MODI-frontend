@@ -34,7 +34,7 @@ const Router = () => {
       element: <DiaryEmotionTag />,
     },
     {
-      path: "/diarywrite",
+      path: "/detail",
       element: <DiaryWritePage />,
     },
     {

@@ -1,6 +1,8 @@
 import styles from "./DiaryEmotionTag.module.css";
 import Header from "../../components/common/Header";
+import PrimaryButton from "../../components/common/button/ButtonBar/PrimaryButton";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const emotionList = [
   { en: "happy", ko: "기쁨" },
@@ -15,10 +17,11 @@ const emotionList = [
   { en: "angry", ko: "화남" },
 ];
 
-const characterName = "momo";
+const characterName = "momo"; //캐릭터 momo로 임시 설정
 
 const DiaryEmotionTag = () => {
   const [selectedEmotion, setSelectedEmotion] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   return (
     <div className={styles.DiaryEmotionTag_wrapper}>
@@ -46,6 +49,12 @@ const DiaryEmotionTag = () => {
             })}
           </div>
         </div>
+        <PrimaryButton
+          location="next"
+          label="다음"
+          onClick={() => navigate("/detail")}
+          disabled={!selectedEmotion}
+        />
       </div>
     </div>
   );
