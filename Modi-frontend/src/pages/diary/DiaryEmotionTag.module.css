@@ -63,3 +63,8 @@
   line-height: 14.49px;
   text-align: center;
 }
+
+.다음 {
+  position: absolute;
+  bottom: 5px;
+}
