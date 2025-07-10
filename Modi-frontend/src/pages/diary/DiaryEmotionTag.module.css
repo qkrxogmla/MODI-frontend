@@ -22,7 +22,7 @@
 }
 
 .main_container {
-  width: 78.8%;
+  width: 81.5%;
   height: 100%;
   padding-top: 40%;
   display: flex;
@@ -44,7 +44,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 15px;
-  margin-top: 40px;
+  margin-top: 13%;
 }
 
 .emotion_item {
