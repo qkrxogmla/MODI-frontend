@@ -55,28 +55,9 @@ const DateSelector: React.FC<Props> = ({
     [items, viewType, year, month]
   );
 
-  const handleYear = (y: string) => {
-    setYear(y);
-    const newDate =
-      viewType === "polaroid" ? `${y}-${month}-${day}` : `${y}-${month}`;
-    onChange(newDate);
-  };
-  const handleMonth = (m: string) => {
-    setMonth(m);
-    const newDate =
-      viewType === "polaroid" ? `${year}-${m}-${day}` : `${year}-${m}`;
-    onChange(newDate);
-  };
-  const handleDay = (d: string) => {
-    setDay(d);
-    onChange(`${year}-${month}-${d}`);
-  };
-
   const yearCol = useRef<HTMLDivElement>(null);
   const monthCol = useRef<HTMLDivElement>(null);
   const dayCol = useRef<HTMLDivElement>(null);
-
-  const centerOffset = 140 / 2;
 
   const onScroll = (
     el: HTMLDivElement,
