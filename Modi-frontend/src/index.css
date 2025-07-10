@@ -46,7 +46,7 @@
   --font-title: 20px;
   --font-headline: 16px;
   --font-subheadline: 15px;
-  --font-body: 15px;
+  --font-body: 14px;
   --font-caption1: 12px;
   --font-caption2: 11px;
   --font-button: 17px;
@@ -71,6 +71,10 @@
 #root {
   width: 100%;
   height: 100%;
+}
+
+*:focus-visible {
+  outline: none;
 }
 
 a {
@@ -101,11 +105,6 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 @font-face {
