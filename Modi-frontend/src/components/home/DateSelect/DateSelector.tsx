@@ -3,7 +3,7 @@ import styles from "./DateSelector.module.css";
 import {
   CharacterType,
   useCharacter,
-} from "../../../../contexts/CharacterContext";
+} from "../../../contexts/CharacterContext";
 
 export interface DiaryItem {
   date: string;

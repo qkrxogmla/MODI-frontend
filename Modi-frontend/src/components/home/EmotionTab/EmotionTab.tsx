@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import EmotionChip from "../../../components/tag/EmotionChip/EmotionChip";
+import EmotionChip from "../../tag/EmotionChip/EmotionChip";
 import styles from "./EmotionTab.module.css";
 
 type CharacterType = "momo" | "boro" | "lumi" | "zuni";
