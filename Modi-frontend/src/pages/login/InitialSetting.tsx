@@ -20,7 +20,7 @@ const InitialSetting = () => {
   };
 
   const handleComplete = () => {
-    navigate("/"); // 홈으로 이동
+    navigate("/home"); // 홈으로 이동
   };
 
   return (
