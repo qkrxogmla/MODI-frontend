@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import styles from "./PhotoView.module.css";
 import { useNavigate } from "react-router-dom";
 import HomeHeader from "../../components/HomePage/HomeHeader/HomeHeader";
 import DateSelector, {
@@ -80,7 +81,7 @@ export default function PhotoView() {
       />
 
       {/* 사진 그리드 */}
-      <div className="photo-grid">
+      <div className="styles.photoGrid">
         {filtered.map((d) => (
           <PhotoDiary
             key={d.id}
