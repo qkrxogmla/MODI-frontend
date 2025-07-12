@@ -113,7 +113,7 @@ const DateSelector: React.FC<Props> = ({
   } as React.CSSProperties;
 
   return (
-    <div className={styles.picker}>
+    <div className={styles.picker} style={styleVars}>
       <div className={styles.column} ref={yearCol}>
         {years.map((y) => (
           <div
