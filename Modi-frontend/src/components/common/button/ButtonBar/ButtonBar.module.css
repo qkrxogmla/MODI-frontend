@@ -1,4 +1,7 @@
 .button {
+  /* 버튼 위치 설정 - feat/jsh/2025-07-14 */
+  position: absolute; /* position 속성 추가 */
+  bottom: 46px; /* 현재 로그인, 초기세팅 화면에서는 둘 다 같은 bottom 값을 가지고 있어서 이렇게 해둘게요 ! */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +26,6 @@
 .label {
   color: #fff;
   font-feature-settings: "liga" off, "clig" off;
-
   font-family: NanumSquareRound;
   font-size: 15px;
   font-style: normal;

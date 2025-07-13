@@ -5,11 +5,13 @@
 }
 
 .home_container {
-  width: 360px;
-  height: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 360px;
+  height: 800px;
   margin: 0 auto;
+  background-image: url("/public/images/background/normal-bg.svg");
 }

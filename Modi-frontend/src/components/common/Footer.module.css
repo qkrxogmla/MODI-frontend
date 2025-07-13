@@ -1,5 +1,5 @@
 .footer_wrapper {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 360px;
   box-sizing: border-box;
