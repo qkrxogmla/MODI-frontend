@@ -9,7 +9,6 @@
   flex-shrink: 0;
 
   border-radius: 15px;
-  background-color: #5c5c5c;
 }
 
 .primary {
@@ -36,20 +35,19 @@
 }
 
 .button:disabled {
-  display: flex;
-  width: 329px;
-  height: 58px;
-  padding: 17px 133px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-
-  border-radius: 15px;
-  background-color: #cbcbc5;
+  filter: grayscale(100%);
+  cursor: not-allowed;
 }
 
 .next {
   position: absolute;
   bottom: 6%;
+}
+
+.enabled {
+  background-color: #5c5c5c;
+}
+
+.completeBtn_disabled {
+  background-color: #cbcbc5;
 }

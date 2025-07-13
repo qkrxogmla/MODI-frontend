@@ -5,8 +5,8 @@ import { ReactComponent as LeftArrow } from "../../../public/icons/left_arrow.sv
 import { ReactComponent as RightArrow } from "../../../public/icons/right_arrow.svg";
 import { ReactComponent as DownArrow } from "../../../public/icons/down_arrow.svg";
 
-import PolaroidButton from "../../../../components/common/button/ButtonIcon/PolaroidButton";
-import PhotoButton from "../../../../components/common/button/ButtonIcon/PhotoButton";
+import PolaroidButton from "../../common/button/ButtonIcon/PolaroidButton";
+import PhotoButton from "../../common/button/ButtonIcon/PhotoButton";
 interface Props {
   viewType: "polaroid" | "photo";
   currentDate: string;
