@@ -1,3 +1,9 @@
+.loginPage_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .loginPage {
   position: relative;
   width: 360px;
@@ -11,12 +17,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.loginPage_wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .loginPage_wrapper > PrimaryButton {
