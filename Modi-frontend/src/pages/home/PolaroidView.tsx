@@ -11,7 +11,11 @@ import PolaroidDiary from "../../components/HomePage/Diary/Polaroid/PolaroidDiar
 import { useCharacter } from "../../contexts/CharacterContext";
 import { allDiaries } from "../../data/diaries";
 
-export default function PolaroidView() {
+interface PolaroidViewProps {
+  onSwitchView: () => void;
+}
+
+export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
   const navigate = useNavigate();
   const { character } = useCharacter();
 
@@ -41,7 +45,7 @@ export default function PolaroidView() {
         onPrev={handlePrev}
         onNext={handleNext}
         onOpenModal={() => setIsModalOpen(true)}
-        onSwitchView={() => navigate("/photo")}
+        onSwitchView={onSwitchView}
       />
       <div className={pageStyles.content}>
         {allDiaries
