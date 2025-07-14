@@ -10,7 +10,7 @@ import Modal from "../../components/common/Modal";
 import EmotionTab, {
   Emotion,
 } from "../../components/HomePage/EmotionTab/EmotionTab";
-import PhotoDiary from "../../components/HomePage/Diary/PhotoDiary";
+import PhotoDiary from "../../components/HomePage/Diary/Photo/PhotoDiary";
 import { useCharacter } from "../../contexts/CharacterContext";
 import { allDiaries, Diary } from "../../data/diaries";
 
