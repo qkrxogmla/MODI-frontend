@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import pageStyles from "./PhotoView.module.css";
+import pageStyles from "./HomePage.module.css";
 import { useNavigate } from "react-router-dom";
 import HomeHeader from "../../components/HomePage/HomeHeader/HomeHeader";
 import DateSelector, {

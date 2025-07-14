@@ -1,12 +1,12 @@
+import React, { useState } from "react";
 import style from "./HomePage.module.css";
 import Footer from "../../components/common/Footer";
 import Header from "../../components/common/Header";
 
-// import HomeHeader from "./components/HomeHeader";
-// import PolaroidView from "./components/PolaroidView";
-// import PhotoView from "./components/PhotoView";
+import PolaroidView from "./PolaroidView";
+import PhotoView from "./PhotoView";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <div className={style.home_wrapper}>
       <div className={style.home_container}>
