@@ -36,3 +36,7 @@ Object.entries(modules).forEach(([path, mod]) => {
   }
   emotionIconMap[character][emotion as Emotion] = mod.ReactComponent;
 });
+
+export function getEmotionIcon(character: CharacterType, emotion: Emotion) {
+  return emotionIconMap[character][emotion];
+}
