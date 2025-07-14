@@ -15,6 +15,7 @@ const PolaroidFrame: React.FC<Props> = ({
   emotion,
   summary,
 }) => (
+  /*
   <Frame
     photoUrl={photoUrl}
     date={date}
@@ -22,6 +23,13 @@ const PolaroidFrame: React.FC<Props> = ({
     summary={summary}
     className={styles.frame}
   />
+  */
+
+  /* TODO: FrameProps가 준비될 때까지 임시로 주석 처리 */
+  /* 임시 플레이스홀더 */
+  <div className={styles["placeholder-frame"]}>
+    <span>사진+요약 렌더 준비 중…</span>
+  </div>
 );
 
 export default PolaroidFrame;
