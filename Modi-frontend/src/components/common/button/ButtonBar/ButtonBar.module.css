@@ -14,13 +14,13 @@
 .primary {
   width: 329px;
   height: 58px;
-  padding: 17px 133px;
+  padding: 0;
 }
 
 .small {
   width: 124px;
   height: 44px;
-  padding: 17px 133px;
+  padding: 0;
 }
 
 .label {
