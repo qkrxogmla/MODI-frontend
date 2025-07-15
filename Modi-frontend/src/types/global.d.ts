@@ -12,3 +12,8 @@ declare module "*.svg" {
   const src: string;
   export default src;
 }
+
+const modules = import.meta.glob<IconModule>(
+  "../assets/emotion_home/**/*.svg",
+  { import: "ReactComponent", eager: true }
+);
