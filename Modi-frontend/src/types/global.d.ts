@@ -5,3 +5,10 @@ declare module "vite-plugin-svgr" {
   const svgr: (...options: any[]) => Plugin | Plugin[];
   export default function svgr(options?: Record<string, any>): PluginOption;
 }
+
+declare module "*.svg" {
+  import * as React from "react";
+  export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
+  const src: string;
+  export default src;
+}

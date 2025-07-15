@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import pageStyles from "./PhotoView.module.css";
+import pageStyles from "./HomePage.module.css";
 import { useNavigate } from "react-router-dom";
 import HomeHeader from "../../components/HomePage/HomeHeader/HomeHeader";
 import DateSelector, {
@@ -10,11 +10,15 @@ import Modal from "../../components/common/Modal";
 import EmotionTab, {
   Emotion,
 } from "../../components/HomePage/EmotionTab/EmotionTab";
-import PhotoDiary from "../../components/HomePage/Diary/PhotoDiary";
+import PhotoDiary from "../../components/HomePage/Diary/Photo/PhotoDiary";
 import { useCharacter } from "../../contexts/CharacterContext";
 import { allDiaries, Diary } from "../../data/diaries";
 
-export default function PhotoView() {
+interface PhotoViewProps {
+  onSwitchView: () => void;
+}
+
+export default function PhotoView({ onSwitchView }: PhotoViewProps) {
   const navigate = useNavigate();
   const { character } = useCharacter();
 
@@ -69,7 +73,7 @@ export default function PhotoView() {
         onPrev={handlePrev}
         onNext={handleNext}
         onOpenModal={() => setIsModalOpen(true)}
-        onSwitchView={() => navigate("/polaroid")}
+        onSwitchView={onSwitchView}
       />
       <div className={pageStyles.content}>
         {/* 감정 탭 */}
