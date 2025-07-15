@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./HomeHeader.module.css";
-
-import { ReactComponent as LeftArrow } from "../../../assets/arrow_icons/left_arrow.svg";
-import { ReactComponent as RightArrow } from "../../../assets/arrow_icons/right_arrow.svg";
-import { ReactComponent as DownArrow } from "../../../assets/arrow_icons/down_arrow.svg";
+import LeftArrow from "./arrow/LeftArrow";
+import RightArrow from "./arrow/RightArrow";
+import DownArrow from "./arrow/DownArrow";
 
 import PolaroidButton from "../../common/button/ButtonIcon/PolaroidButton";
 import PhotoButton from "../../common/button/ButtonIcon/PhotoButton";
