@@ -15,9 +15,13 @@ interface IconModule {
   ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
-const modules = import.meta.globEager<IconModule>(
+const modules = import.meta.glob<IconModule>(
+  // emotion_home 폴더 아래에 있는 모든 .svg
   "../public/emotion_home/**/*.svg",
-  { import: "ReactComponent" }
+  {
+    import: "ReactComponent",
+    eager: true,
+  }
 );
 
 export const emotionIconMap: Record<

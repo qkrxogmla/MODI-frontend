@@ -6,7 +6,7 @@ import PolaroidView from "./PolaroidView";
 import PhotoView from "./PhotoView";
 
 export default function HomePage() {
-  const [viewType, setViewType] = useState<"photo" | "polaroid">("photo");
+  const [viewType, setViewType] = useState<"photo" | "polaroid">("polaroid");
   return (
     <div className={style.home_wrapper}>
       <div className={style.home_container}>
