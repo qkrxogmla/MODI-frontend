@@ -7,7 +7,7 @@ interface ButtonIconProps {
 export default function ButtonIcon({ onClick }: ButtonIconProps) {
   return (
     <button className={styles.container} onClick={onClick}>
-      <img src="/icons/delete.svg" alt="삭제 아이콘" className={styles.icon} />
+      <img src="/icons/X.svg" alt="취소 버튼" className={styles.icon} />
     </button>
   );
 }
