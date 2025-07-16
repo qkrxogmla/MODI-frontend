@@ -1,25 +1,25 @@
 .header {
   position: absolute;
-  top: 133px;
-  left: 30px;
-  right: 0px;
+  top: 125px;
+  left: -50%;
+  transform: translateX(50%);
+
   display: flex;
   align-items: center;
   justify-content: flex-end;
 
   height: 39px;
   width: 100%;
-  padding: 0 16px;
 }
 
 .center {
-  position: absolute;
-  left: 30%;
-  transform: translateX(-30%);
+  position: relative;
+  left: -50%;
+  transform: translateX(50%);
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
 }
 
 .frame {
@@ -59,8 +59,7 @@
   display: flex;
 
   position: absolute;
-  left: 275px;
-  /*임시*/
+  right: 16px;
 
   width: 40px;
   height: 39px;
