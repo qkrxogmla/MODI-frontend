@@ -22,12 +22,21 @@ export default function PhotoView({ onSwitchView }: PhotoViewProps) {
   const navigate = useNavigate();
   const { character } = useCharacter();
 
+  const availableMonths = useMemo(() => {
+    return Array.from(
+      new Set(allDiaries.map((d) => d.date.slice(0, 7)))
+    ).sort();
+  }, []);
+  const dateItems = availableMonths.map((d) => ({ date: d }));
+
   const [viewDate, setViewDate] = useState(() => {
     const now = new Date();
-    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(
-      2,
-      "0"
-    )}`;
+    const thisMonth = `${now.getFullYear()}-${String(
+      now.getMonth() + 1
+    ).padStart(2, "0")}`;
+    return availableMonths.includes(thisMonth)
+      ? thisMonth
+      : availableMonths.at(-1)!;
   });
 
   const monthDiaries = useMemo(
@@ -44,25 +53,21 @@ export default function PhotoView({ onSwitchView }: PhotoViewProps) {
   const [selectedEmotion, setSelectedEmotion] = useState<Emotion | null>(null);
 
   const handlePrev = () => {
-    const [yy, mm] = viewDate.split("-").map(Number);
-    const d = new Date(yy, mm - 2, 1);
-    setViewDate(
-      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`
-    );
+    const idx = availableMonths.indexOf(viewDate);
+    if (idx > 0) {
+      setViewDate(availableMonths[idx - 1]);
+    }
   };
   const handleNext = () => {
-    const [yy, mm] = viewDate.split("-").map(Number);
-    const d = new Date(yy, mm, 1);
-    setViewDate(
-      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`
-    );
+    const idx = availableMonths.indexOf(viewDate);
+    if (idx < availableMonths.length - 1) {
+      setViewDate(availableMonths[idx + 1]);
+    }
   };
 
   const filtered = selectedEmotion
     ? monthDiaries.filter((d) => d.emotion === selectedEmotion)
     : monthDiaries;
-
-  const dateItems: DiaryItem[] = monthDiaries.map((d) => ({ date: d.date }));
 
   return (
     <div className={pageStyles.wrapper}>
