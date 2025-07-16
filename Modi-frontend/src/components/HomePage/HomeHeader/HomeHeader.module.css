@@ -1,8 +1,12 @@
 .header {
-  position: relative;
+  position: absolute;
+  top: 133px;
+  left: 30px;
+  right: 0px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+
   height: 39px;
   width: 100%;
   padding: 0 16px;
@@ -10,32 +14,59 @@
 
 .center {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 30%;
+  transform: translateX(-30%);
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: 32px;
 }
 
 .frame {
+  background-color: transparent;
   display: flex;
   align-items: center;
+  padding: 0;
   gap: 8px;
+}
+
+.nav {
+  background-color: transparent;
+  width: 6px;
+  height: 12px;
+  aspect-ratio: 1/2;
+  padding: 0;
 }
 
 .label {
   color: #404040;
 
+  width: auto;
+  height: auto;
+
+  white-space: "nowrap";
   text-align: center;
   font-family: "DM Sans";
   font-size: 22px;
   font-style: normal;
   font-weight: 600;
-  line-height: 20.884px;
-  letter-spacing: -0.949px;
+  line-height: 28px;
+  letter-spacing: -0.5px;
   text-transform: capitalize;
 }
 
 .modeSwitch {
-  margin-left: auto;
+  display: flex;
+
+  position: absolute;
+  left: 275px;
+  /*임시*/
+
+  width: 40px;
+  height: 39px;
+  padding: 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
 }
