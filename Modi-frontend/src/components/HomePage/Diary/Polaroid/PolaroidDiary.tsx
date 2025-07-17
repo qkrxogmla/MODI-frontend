@@ -3,6 +3,7 @@ import styles from "./PolaroidDiary.module.css";
 import PolaroidFrame from "./PolaroidFrame";
 import EmotionCharacter from "./EmotionCharacter";
 import EmotionTagList from "./EmotionTagList";
+import type { CharacterType } from "../../../../utils/emotionImages";
 import type { Emotion } from "../../../../utils/emotionImages";
 
 export interface PolaroidDiaryProps {
@@ -12,6 +13,7 @@ export interface PolaroidDiaryProps {
   content: string;
   clicked: boolean;
   tags?: string[];
+  characterId: CharacterType;
 }
 
 const PolaroidDiary: React.FC<PolaroidDiaryProps> = ({
@@ -20,7 +22,7 @@ const PolaroidDiary: React.FC<PolaroidDiaryProps> = ({
   emotion,
   content,
   tags = [],
-  clicked,
+  characterId,
 }) => (
   <div className={styles.container}>
     <PolaroidFrame
@@ -30,7 +32,7 @@ const PolaroidDiary: React.FC<PolaroidDiaryProps> = ({
       summary={content}
     />
     <div className={styles.info}>
-      <EmotionCharacter emotion={emotion} />
+      <EmotionCharacter characterId={characterId} emotion={emotion} />
       <EmotionTagList tags={tags} />
     </div>
   </div>

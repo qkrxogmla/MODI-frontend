@@ -61,6 +61,7 @@ export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
               emotion={d.emotion}
               content={d.summary}
               tags={d.tags ?? []}
+              characterId={character!}
               clicked={false}
             />
           ))}
