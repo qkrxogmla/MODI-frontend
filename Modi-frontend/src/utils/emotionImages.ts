@@ -1,4 +1,3 @@
-import type { SVGProps, FC } from "react";
 import { CharacterType } from "../contexts/CharacterContext";
 import type { Emotion } from "../data/diaries";
 
@@ -18,10 +17,9 @@ const slugToEmotion: Record<string, Emotion> = {
 };
 
 const modules = import.meta.glob<string>(
-  // emotion_home 폴더 아래에 있는 모든 .svg
-  "../assets/emotion_home/**/*.svg",
+  "../assets/emotion_home/**/*.svg?url",
   {
-    as: "url",
+    import: "default",
     eager: true,
   }
 );
