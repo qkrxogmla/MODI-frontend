@@ -1,6 +1,19 @@
 .container {
-  position: relative;
+  position: absolute;
+  top: 190px;
+  left: 50px;
+  right: 50px;
   gap: 6px;
+}
+
+.info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  height: 162px;
+  width: 328px;
+  padding: 0;
 }
 
 .tags {
