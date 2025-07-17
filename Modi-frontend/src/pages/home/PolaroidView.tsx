@@ -10,6 +10,8 @@ import Modal from "../../components/common/Modal";
 import PolaroidDiary from "../../components/HomePage/Diary/Polaroid/PolaroidDiary";
 import { useCharacter } from "../../contexts/CharacterContext";
 import { allDiaries } from "../../data/diaries";
+import EmotionCharacter from "../../components/HomePage/Diary/Polaroid/EmotionCharacter";
+import EmotionTagList from "../../components/HomePage/Diary/Polaroid/EmotionTagList";
 
 interface PolaroidViewProps {
   onSwitchView: () => void;
@@ -54,16 +56,16 @@ export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
         {allDiaries
           .filter((d) => d.date === viewDate)
           .map((d) => (
-            <PolaroidDiary
-              key={d.id}
-              date={d.date}
-              photoUrl={d.photoUrl}
-              emotion={d.emotion}
-              content={d.summary}
-              tags={d.tags ?? []}
-              characterId={character!}
-              clicked={false}
-            />
+            <React.Fragment key={d.id}>
+              <PolaroidDiary
+                date={d.date}
+                photoUrl={d.photoUrl}
+                emotion={d.emotion}
+                content={d.summary}
+                tags={d.tags ?? []}
+                clicked={false}
+              />
+            </React.Fragment>
           ))}
       </div>
 
