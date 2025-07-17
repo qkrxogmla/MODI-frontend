@@ -3,7 +3,6 @@
   top: 190px;
   left: 50px;
   right: 50px;
-  gap: 6px;
 }
 
 .info {
@@ -30,4 +29,9 @@
   gap: 9px;
   padding: 0 16px;
   margin-top: 16px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 4px;
 }
