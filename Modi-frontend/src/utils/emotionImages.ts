@@ -1,56 +1,61 @@
 import type { SVGProps, FC } from "react";
-import { useCharacter } from "../contexts/CharacterContext";
+import { CharacterType } from "../contexts/CharacterContext";
+import type { Emotion } from "../data/diaries";
 
-export type CharacterType = "momo" | "boro" | "lumi" | "zuni";
-export type Emotion =
-  | "기쁨"
-  | "놀람"
-  | "보통"
-  | "떨림"
-  | "사랑"
-  | "신남"
-  | "아픔"
-  | "슬픔"
-  | "지루함"
-  | "화남";
+export type CharacterKey = Exclude<CharacterType, null>;
 
-interface IconModule {
-  default: React.FC<React.SVGProps<SVGSVGElement>>;
-}
+const slugToEmotion: Record<string, Emotion> = {
+  happy: "기쁨",
+  surprised: "놀람",
+  normal: "보통",
+  nervous: "떨림",
+  love: "사랑",
+  excited: "신남",
+  sick: "아픔",
+  sad: "슬픔",
+  bored: "지루함",
+  angry: "화남",
+};
 
-const modules = import.meta.glob<FC<SVGProps<SVGSVGElement>>>(
+const modules = import.meta.glob<string>(
   // emotion_home 폴더 아래에 있는 모든 .svg
   "../assets/emotion_home/**/*.svg",
   {
-    import: "default",
+    as: "url",
     eager: true,
   }
 );
 
+console.log("💡 emotion modules keys:", Object.keys(modules));
+
 console.log("🌱 modules:", modules);
 
-export const emotionIconMap: Record<
-  CharacterType,
-  Record<Emotion, FC<SVGProps<SVGSVGElement>>>
-> = {} as any;
+export const emotionIconMap: Partial<
+  Record<CharacterKey, Partial<Record<Emotion, string>>>
+> = {};
 
-Object.entries(modules).forEach(([path, mod]) => {
+Object.entries(modules).forEach(([path, url]) => {
   const parts = path.split("/");
-  const character = parts[3] as CharacterType;
+  const characterKey = parts[3] as CharacterKey;
   const fileName = parts[4]; // 'home_momo-happy.svg'
   const match = fileName.match(/home_[^-]+-([^.]+)\.svg/)!;
   if (!match) return;
-  const emotion = match[1] as Emotion;
 
-  if (!emotionIconMap[character]) {
-    emotionIconMap[character] = {} as any;
+  const slug = match[1]; // "sad"
+  console.log("🪲 found slug:", slug, "for file:", fileName);
+  const emotion = slugToEmotion[slug]; // "슬픔"
+  console.log("🪲 mapped emotion:", emotion);
+  if (!emotion) return;
+
+  if (!emotionIconMap[characterKey]) {
+    emotionIconMap[characterKey] = {};
   }
-  emotionIconMap[character][emotion] = mod;
+  emotionIconMap[characterKey][emotion] = url;
 });
 
 export function getEmotionIcon(
-  character: CharacterType,
+  character: CharacterKey,
   emotion: Emotion
-): FC<SVGProps<SVGSVGElement>> | undefined {
+): string | undefined {
   return emotionIconMap[character]?.[emotion];
 }

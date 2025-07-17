@@ -24,16 +24,16 @@ export default function HomeHeader({
   onSwitchView,
 }: Props) {
   // 텍스트 포맷:
+  const parsedDate = new Date(
+    viewType === "polaroid" ? currentDate : `${currentDate}-01`
+  );
+
+  const month = parsedDate.toLocaleDateString("en", { month: "short" });
+
   const label =
     viewType === "polaroid"
-      ? new Date(currentDate).toLocaleDateString("en", {
-          month: "short",
-          day: "2-digit",
-        })
-      : new Date(currentDate + "-01").toLocaleDateString("en", {
-          month: "short",
-          year: "numeric",
-        });
+      ? `${parsedDate.getFullYear()} ${month}. ${parsedDate.getDate()}`
+      : `${parsedDate.getFullYear()} ${month}`;
 
   return (
     <div className={styles.header}>
@@ -41,7 +41,13 @@ export default function HomeHeader({
         <button onClick={onPrev} className={styles.nav}>
           <LeftArrow />
         </button>
-        <button onClick={onOpenModal} className={styles.frame}>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onOpenModal();
+          }}
+          className={styles.frame}
+        >
           <span className={styles.label}>{label}</span>
           <DownArrow />
         </button>
