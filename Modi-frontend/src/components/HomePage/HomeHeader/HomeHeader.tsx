@@ -41,7 +41,15 @@ export default function HomeHeader({
         <button onClick={onPrev} className={styles.nav}>
           <LeftArrow />
         </button>
-        <button onClick={onOpenModal} className={styles.frame}>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            setTimeout(() => {
+              onOpenModal();
+            }, 0);
+          }}
+          className={styles.frame}
+        >
           <span className={styles.label}>{label}</span>
           <DownArrow />
         </button>
