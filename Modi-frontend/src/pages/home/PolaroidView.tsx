@@ -44,7 +44,10 @@ export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
         currentDate={viewDate}
         onPrev={handlePrev}
         onNext={handleNext}
-        onOpenModal={() => setIsModalOpen(true)}
+        onOpenModal={() => {
+          console.log(">> PolaroidView: onOpenModal 호출");
+          setIsModalOpen(true);
+        }}
         onSwitchView={onSwitchView}
       />
       <div className={pageStyles.content}>

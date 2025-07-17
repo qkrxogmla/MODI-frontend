@@ -44,9 +44,7 @@ export default function HomeHeader({
         <button
           onClick={(e) => {
             e.stopPropagation();
-            setTimeout(() => {
-              onOpenModal();
-            }, 0);
+            onOpenModal();
           }}
           className={styles.frame}
         >
