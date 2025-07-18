@@ -43,7 +43,6 @@
   align-items: center;
   margin-top: 8px;
   gap: 2px;
-  margin-bottom: 32px;
 }
 
 .caution_img {
@@ -56,4 +55,5 @@
   font-size: var(--font-subheadline);
   line-height: 20px;
   letter-spacing: -0.23px;
+  margin-top: 32px;
 }

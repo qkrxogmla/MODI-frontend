@@ -4,7 +4,7 @@
   min-width: 100px;
   border: none;
   outline: none;
-  font-size: 14px;
+  font-size: var(--font-body);
   font-family: var(--font-nanum-square);
   background-color: transparent;
   padding: 0;
