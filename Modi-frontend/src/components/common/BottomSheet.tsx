@@ -12,6 +12,7 @@ const BottomSheet = ({ isOpen, onClose, children }: BottomSheetProps) => {
   const [translateY, setTranslateY] = useState(0);
   const threshold = 100;
 
+  // 모달 닫으면 초기화 시켜주어야함 안하면 높이 깨짐
   useEffect(() => {
     if (isOpen) {
       setTranslateY(0);
