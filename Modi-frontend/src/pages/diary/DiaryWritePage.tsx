@@ -6,7 +6,7 @@ import Header from "../../components/common/Header";
 import { useDiaryDraft } from "../../hooks/useDiaryDraft";
 import PrimaryButton from "../../components/common/button/ButtonBar/PrimaryButton";
 import AddressInput from "../../components/DiaryPage/AddressInput";
-import KeywordInput from "../../components/DiaryPage/KeywordInput";
+//import KeywordInput from "../../components/DiaryPage/KeywordInput";
 
 const DiaryWritePage = () => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -133,8 +133,7 @@ const DiaryWritePage = () => {
           {/* 주소 입력 */}
           <AddressInput />
 
-          {/* 키워드 */}
-          <KeywordInput />
+          {/* 키워드 <KeywordInput /> */}
 
           {/* 내용 */}
           <div className={styles.input_group}>
