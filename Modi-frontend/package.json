@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/gapi": "^0.0.47",
+    "@types/gapi.auth2": "^0.0.61",
     "exif-js": "^2.3.0",
     "exifreader": "^4.31.1",
     "react": "^19.1.0",

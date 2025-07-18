@@ -6,13 +6,11 @@ import KakaoMap from "../../components/map/KakaoMap";
 const MapPage = () => {
   return (
     <div className={styles.mapPage_wrapper}>
-      <div className={styles.mapPage}>
-        <Header />
-        <div className={styles.mapContainer}>
-          <KakaoMap />
-        </div>
-        <Footer />
+      <div className={styles.searchBar}>
+        <span>검색 기능 추가</span>
       </div>
+      <KakaoMap />
+      <Footer />
     </div>
   );
 };
