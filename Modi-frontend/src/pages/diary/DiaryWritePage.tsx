@@ -1,17 +1,23 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import ExifReader from "exifreader";
+import { useNavigate } from "react-router-dom";
 import styles from "./DiaryWritePage.module.css";
 import Header from "../../components/common/Header";
+import { useDiaryDraft } from "../../hooks/useDiaryDraft";
 import PrimaryButton from "../../components/common/button/ButtonBar/PrimaryButton";
 import AddressInput from "../../components/DiaryPage/AddressInput";
 //import KeywordInput from "../../components/DiaryPage/KeywordInput";
 
 const DiaryWritePage = () => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const [address, setAddress] = useState<string>("");
-  const [content, setContent] = useState<string>("");
   const kakaoKey = import.meta.env.VITE_KAKAO_API_KEY;
+  const navigate = useNavigate();
+
+  // 전역변수 가져오기
+  const { draft, setDraft } = useDiaryDraft();
+  // 비활성화 조건 추가
+  const isReadyToSubmit =
+    draft.image && draft.address.trim() !== "" && draft.keywords.length > 2;
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -20,7 +26,7 @@ const DiaryWritePage = () => {
     const reader = new FileReader();
     reader.onload = async () => {
       const imageUrl = reader.result as string;
-      setImagePreview(imageUrl);
+      setDraft({ image: imageUrl });
 
       // GPS 정보 추출
       const arrayBuffer = await file.arrayBuffer();
@@ -84,7 +90,7 @@ const DiaryWritePage = () => {
       const data = await res.json();
       const addressName = data.documents?.[0]?.address?.address_name;
       if (addressName) {
-        setAddress(addressName);
+        setDraft({ address: addressName });
       } else {
         alert("주소를 찾을 수 없어요.");
       }
@@ -103,9 +109,9 @@ const DiaryWritePage = () => {
             className={styles.photo_upload_box}
             onClick={() => fileInputRef.current?.click()}
           >
-            {imagePreview ? (
+            {draft.image ? (
               <img
-                src={imagePreview}
+                src={draft.image}
                 alt="preview"
                 className={styles.preview_image}
               />
@@ -134,8 +140,8 @@ const DiaryWritePage = () => {
             <label className={styles.input_label}>내용을 입력해주세요</label>
             <textarea
               placeholder="텍스트 미입력 시 일기가 자동생성돼요"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
+              value={draft.content}
+              onChange={(e) => setDraft({ content: e.target.value })}
               className={styles.textarea}
               rows={4}
             />
@@ -152,9 +158,9 @@ const DiaryWritePage = () => {
           location="next"
           label="다음"
           onClick={() => {
-            console.log({ imagePreview, address, content });
+            navigate("/style");
           }}
-          disabled={false}
+          disabled={!isReadyToSubmit}
         />
       </div>
     </div>

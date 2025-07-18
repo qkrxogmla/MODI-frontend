@@ -10,6 +10,7 @@ import InitialSetting from "../pages/login/InitialSetting";
 import SearchPage from "../pages/search/SearchPage";
 import DiaryEmotionTag from "../pages/diary/DiaryEmotionTag";
 import DiaryKeywordPage from "../pages/diary/DiaryKeywordPage";
+import DiaryStylePage from "../pages/diary/DiaryStylePage";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const Router = () => {
     {
       path: "/keyword",
       element: <DiaryKeywordPage />,
+    },
+    {
+      path: "/style",
+      element: <DiaryStylePage />,
     },
     {
       path: "/recorddetail",
