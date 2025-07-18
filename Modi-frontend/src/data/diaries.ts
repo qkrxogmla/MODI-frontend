@@ -27,6 +27,7 @@ export const allDiaries: Diary[] = [
     photoUrl: "/img/1.jpg",
     summary: "일기 내용 한 줄 요약",
     emotion: "기쁨",
+    tags: ["#태그2", "#태그2", "#태그2"],
   },
   {
     id: 2,
@@ -34,6 +35,7 @@ export const allDiaries: Diary[] = [
     photoUrl: "/img/2.jpg",
     summary: "일기 내용 한 줄 요약",
     emotion: "슬픔",
+    tags: ["#태그3", "#태그3", "#태그3"],
   },
   {
     id: 3,
@@ -41,6 +43,7 @@ export const allDiaries: Diary[] = [
     photoUrl: "/img/3.jpg",
     summary: "일기 내용 한 줄 요약",
     emotion: "보통",
+    tags: ["#태그1", "#태그1", "#태그1"],
   },
   // …필요한 만큼 추가
 ];
