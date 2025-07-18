@@ -28,10 +28,6 @@
 }
 
 .label {
-  position: absolute;
-  right: 45.882px;
-  top: 5px;
-
   color: #2c2c2c;
   text-align: center;
   font-feature-settings: "liga" off, "clig" off;

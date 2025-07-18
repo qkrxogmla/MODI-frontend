@@ -18,8 +18,12 @@ const EmotionTagList: React.FC<Props> = ({ tags }) => {
 
   return (
     <div className={styles.wrapper}>
-      {displayed.map((tag) => (
-        <EmotionTag key={tag} label={tag} type={selectedCharacter} />
+      {displayed.map((tag, idx) => (
+        <EmotionTag
+          key={`${tag}-${idx}`}
+          label={tag}
+          type={selectedCharacter}
+        />
       ))}
     </div>
   );
