@@ -30,3 +30,30 @@
   flex-direction: column;
   box-sizing: border-box;
 }
+
+.caution {
+  color: #ff5757;
+  font-family: var(--font-nanum-square);
+  font-weight: 400;
+  font-size: var(--font-caption2);
+  line-height: 13px;
+  letter-spacing: 0.06px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8px;
+  gap: 2px;
+  margin-bottom: 32px;
+}
+
+.caution_img {
+  margin-bottom: 2px;
+}
+
+.title {
+  font-family: var(--font-nanum-square);
+  font-weight: 600;
+  font-size: var(--font-subheadline);
+  line-height: 20px;
+  letter-spacing: -0.23px;
+}

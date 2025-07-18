@@ -15,6 +15,13 @@ const DiaryKeywordPage = () => {
         <Header />
         <div className={styles.main_container}>
           <KeywordInput />
+          {draft.keywords.length < 3 ? (
+            <p className={styles.caution}>
+              <img src="/icons/danger.svg" className={styles.caution_img} />
+              키워드를 3개 이상 입력해주세요
+            </p>
+          ) : null}
+          <p className={styles.title}>키워드 사용 기록</p>
         </div>
         <PrimaryButton
           location="next"
