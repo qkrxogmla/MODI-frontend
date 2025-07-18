@@ -16,13 +16,10 @@ const slugToEmotion: Record<string, Emotion> = {
   angry: "화남",
 };
 
-const modules = import.meta.glob<string>(
-  "../assets/emotion_home/**/*.svg?url",
-  {
-    import: "default",
-    eager: true,
-  }
-);
+const modules = import.meta.glob("../assets/emotion_home/**/*.svg", {
+  as: "url",
+  eager: true,
+});
 
 console.log("💡 emotion modules keys:", Object.keys(modules));
 
