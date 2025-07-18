@@ -15,7 +15,7 @@ const DiaryKeywordPage = () => {
         <PrimaryButton
           location="next"
           label="완료"
-          onClick={() => navigate(-1)}
+          onClick={() => navigate("/detail")}
           disabled={false}
         />
       </div>
