@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+/*import { useNavigate } from "react-router-dom";
 import { WithContext as ReactTags, Tag } from "react-tag-input";
 import { useDiaryDraft } from "../../hooks/useDiaryDraft";
 import styles from "./KeywordInput.module.css";
@@ -60,4 +60,4 @@ const KeywordInput = () => {
   );
 };
 
-export default KeywordInput;
+export default KeywordInput;*/
