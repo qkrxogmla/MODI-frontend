@@ -12,7 +12,9 @@ const DiaryWritePage = () => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const kakaoKey = import.meta.env.VITE_KAKAO_API_KEY;
 
+  // 전역변수 가져오기
   const { draft, setDraft } = useDiaryDraft();
+  // 비활성화 조건 추가
   const isReadyToSubmit =
     draft.image && draft.address.trim() !== "" && draft.keywords.length > 2;
 
