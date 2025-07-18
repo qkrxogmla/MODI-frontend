@@ -11,7 +11,9 @@ const DiaryKeywordPage = () => {
     <div className={styles.DiaryKeyword_wrapper}>
       <div className={styles.DiaryKeyword_container}>
         <Header />
-        <KeywordInput />
+        <div className={styles.main_container}>
+          <KeywordInput />
+        </div>
         <PrimaryButton
           location="next"
           label="완료"
