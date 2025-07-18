@@ -13,7 +13,7 @@
   width: 360px;
   height: 800px;
   margin: 0 auto;
-  background-image: url("/public/images/background/normal-bg.svg");
+  background-image: url("/images/background/normal-bg.svg");
 }
 
 .photoGrid {
