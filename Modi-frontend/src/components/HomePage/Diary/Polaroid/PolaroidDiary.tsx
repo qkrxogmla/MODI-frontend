@@ -29,7 +29,10 @@ const PolaroidDiary: React.FC<PolaroidDiaryProps> = ({
       summary={content}
     />
     <div className={styles.info}>
-      <EmotionCharacter emotion={emotion} />
+      <div className={styles.character}>
+        <EmotionCharacter emotion={emotion} />
+      </div>
+
       <EmotionTagList tags={tags} />
     </div>
   </div>

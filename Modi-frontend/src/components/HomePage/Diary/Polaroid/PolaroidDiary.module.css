@@ -1,6 +1,6 @@
 .container {
   position: absolute;
-  top: 190px;
+  top: 192px;
   left: 50px;
   right: 50px;
 }
@@ -15,6 +15,11 @@
   padding: 0;
 }
 
+.character {
+  position: absolute;
+  top: 6px;
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -24,15 +29,34 @@
 }
 
 .info {
+  position: relative;
   display: flex;
   align-items: flex-end;
   gap: 9px;
   padding: 0 16px;
-  margin-top: 16px;
 }
 
 .wrapper {
   display: flex;
-  gap: 4px;
+  gap: 8px;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wrapper > :nth-child(1) {
+  position: absolute;
+  top: 30px;
+  right: 42px;
+}
+
+.wrapper > :nth-child(2) {
+  position: absolute;
+  top: 78px;
+  right: 16px;
+}
+
+.wrapper > :nth-child(3) {
+  position: absolute;
+  top: 126px;
+  right: 57px;
 }
