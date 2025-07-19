@@ -19,8 +19,6 @@ const DEFAULT_EMOTIONS = [
 export type Emotion = (typeof DEFAULT_EMOTIONS)[number];
 
 interface EmotionTabProps {
-  /* 필터링할 감정 리스트 */
-  emotions?: readonly Emotion[];
   /* 현재 선택된 감정 (null이면 전체) */
   selectedEmotion: Emotion | null;
   /* 감정 클릭 시 호출 */
@@ -30,20 +28,21 @@ interface EmotionTabProps {
 }
 
 export default function EmotionTab({
-  emotions = DEFAULT_EMOTIONS,
   selectedEmotion,
   onSelectEmotion,
   userCharacter,
 }: EmotionTabProps) {
   return (
     <div className={styles.wrapper}>
-      {emotions.map((emotion) => (
+      {DEFAULT_EMOTIONS.map((emotion) => (
         <EmotionChip
           key={emotion}
           label={emotion}
           type={userCharacter}
           selected={selectedEmotion === emotion}
-          onClick={() => onSelectEmotion(emotion)}
+          onClick={() =>
+            onSelectEmotion(selectedEmotion === emotion ? null : emotion)
+          }
         />
       ))}
     </div>
