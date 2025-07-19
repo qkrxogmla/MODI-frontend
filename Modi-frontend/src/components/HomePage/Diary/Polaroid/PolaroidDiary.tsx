@@ -32,7 +32,6 @@ const PolaroidDiary: React.FC<PolaroidDiaryProps> = ({
       <div className={styles.character}>
         <EmotionCharacter emotion={emotion} />
       </div>
-
       <EmotionTagList tags={tags} />
     </div>
   </div>
