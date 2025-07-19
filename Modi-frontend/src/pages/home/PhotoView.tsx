@@ -91,7 +91,7 @@ export default function PhotoView({ onSwitchView }: PhotoViewProps) {
         </div>
 
         {/* 사진 그리드 */}
-        <div className="pageStyles.photoGrid">
+        <div className={pageStyles.photoGrid}>
           {filtered.map((d) => (
             <PhotoDiary
               key={d.id}

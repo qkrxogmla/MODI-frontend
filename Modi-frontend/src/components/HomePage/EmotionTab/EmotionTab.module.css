@@ -1,8 +1,10 @@
 .wrapper {
+  width: 100%;
   display: flex;
   gap: 8px;
   overflow-x: auto;
   scrollbar-width: thin;
+  -ms-overflow-style: none;
 }
 
 /*WebKit 브라우저 전용*/
