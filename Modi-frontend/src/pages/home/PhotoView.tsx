@@ -82,12 +82,13 @@ export default function PhotoView({ onSwitchView }: PhotoViewProps) {
       />
       <div className={pageStyles.content}>
         {/* 감정 탭 */}
-        <EmotionTab
-          emotions={emotionList}
-          selectedEmotion={selectedEmotion}
-          onSelectEmotion={setSelectedEmotion}
-          userCharacter={character!}
-        />
+        <div className={pageStyles.emotionTab}>
+          <EmotionTab
+            selectedEmotion={selectedEmotion}
+            onSelectEmotion={setSelectedEmotion}
+            userCharacter={character!}
+          />
+        </div>
 
         {/* 사진 그리드 */}
         <div className="pageStyles.photoGrid">

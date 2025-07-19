@@ -53,6 +53,12 @@
   margin-bottom: 16px;
 }
 
+.emotionTab {
+  position: relative;
+  top: -15px;
+  left: 16px;
+}
+
 .content {
   position: relative;
   top: 80px;
