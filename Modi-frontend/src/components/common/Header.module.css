@@ -1,7 +1,7 @@
 .header_wrapper {
   position: absolute;
   top: 0;
-  width: 360px;
+  width: 100%;
   box-sizing: border-box;
   height: 140px;
   background-color: #fbf9f3;
@@ -14,5 +14,14 @@
 .header_container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
+}
+.func {
+  font-family: var(--font-nanum-square);
+  font-weight: 600;
+  font-size: var(--font-headline);
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  text-align: center;
 }
