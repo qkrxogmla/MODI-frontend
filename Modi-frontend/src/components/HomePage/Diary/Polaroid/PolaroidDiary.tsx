@@ -10,7 +10,6 @@ export interface PolaroidDiaryProps {
   photoUrl: string;
   emotion: Emotion;
   content: string;
-  clicked: boolean;
   tags?: string[];
 }
 

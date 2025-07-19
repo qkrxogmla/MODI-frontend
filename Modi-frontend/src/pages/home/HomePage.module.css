@@ -1,4 +1,5 @@
 .home_wrapper {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,4 +51,63 @@
   padding: 0 16px;
   margin-top: 48px;
   margin-bottom: 16px;
+}
+
+.content {
+  position: relative;
+  top: 80px;
+  width: 360px;
+  height: 580px;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0px;
+  overflow: hidden;
+  padding: 0 80px;
+  height: 338px;
+}
+
+.slot1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(-15deg) translateX(-190px)
+    translateY(-50px) scale(0.9);
+  transform-origin: bottom center;
+  z-index: 1;
+}
+
+/* 슬롯2: 중앙(현재) */
+.slot2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 2;
+}
+
+/* 슬롯3: 오른쪽 */
+.slot3 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(15deg) translateX(190px) translateY(-50px)
+    scale(0.9);
+  transform-origin: bottom center;
+  z-index: 1;
+}
+
+/* 빈 슬롯: 프레임 크기만큼 자리만 차지 */
+.emptySlot {
+  width: 328px; /* PolaroidFrame 너비에 맞춰주세요 */
+  height: 360px; /* PolaroidFrame 높이에 맞춰주세요 */
+}
+
+.staticInfo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 160px;
+  padding: 0 16px;
 }
