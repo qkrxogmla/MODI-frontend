@@ -1,77 +1,28 @@
-import React, { useEffect, useRef, useState } from "react";
-import styles from "./KakaoMap.module.css";
-import { loadKakaoMapAPI } from "../../utils/kakaoMapLoader";
+import { useEffect, useRef } from "react";
 
 interface KakaoMapProps {
-  center?: { lat: number; lng: number };
+  latitude: number;
+  longitude: number;
   level?: number;
-  className?: string;
 }
 
-const KakaoMap: React.FC<KakaoMapProps> = ({
-  center = { lat: 37.5665, lng: 126.978 }, // 서울 시청 기본 위치
-  level = 3,
-  className,
-}) => {
-  const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstance = useRef<any>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+const KakaoMap = ({ latitude, longitude, level = 3 }: KakaoMapProps) => {
+  const mapRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const initMap = async () => {
-      try {
-        setIsLoading(true);
-        setError(null);
+    if (!window.kakao || !mapRef.current) return;
 
-        // 카카오 지도 API 로드
-        await loadKakaoMapAPI();
-
-        if (mapRef.current && window.kakao) {
-          const options = {
-            center: new window.kakao.maps.LatLng(center.lat, center.lng),
-            level: level,
-          };
-
-          mapInstance.current = new window.kakao.maps.Map(
-            mapRef.current,
-            options
-          );
-          setIsLoading(false);
-        }
-      } catch (err) {
-        setError(
-          err instanceof Error
-            ? err.message
-            : "지도를 로드하는 중 오류가 발생했습니다."
-        );
-        setIsLoading(false);
-      }
+    const center = new window.kakao.maps.LatLng(latitude, longitude);
+    const options = {
+      center,
+      level,
     };
 
-    initMap();
-  }, [center.lat, center.lng, level]);
-
-  if (isLoading) {
-    return (
-      <div
-        className={`${styles.kakaoMap} ${styles.loading} ${className || ""}`}
-      >
-        <div className={styles.loadingText}>지도를 로드하는 중...</div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className={`${styles.kakaoMap} ${styles.error} ${className || ""}`}>
-        <div className={styles.errorText}>{error}</div>
-      </div>
-    );
-  }
+    new window.kakao.maps.Map(mapRef.current, options);
+  }, [latitude, longitude, level]);
 
   return (
-    <div ref={mapRef} className={`${styles.kakaoMap} ${className || ""}`} />
+    <div id="map" ref={mapRef} style={{ width: "100%", height: "100%" }} />
   );
 };
 
