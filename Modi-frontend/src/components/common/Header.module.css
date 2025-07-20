@@ -9,13 +9,15 @@
   padding: 48px 16px 38px 16px;
   box-sizing: border-box;
   background-color: transparent;
+
+  z-index: 10;
 }
 
 .header_container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 100%;
+  position: relative;
 }
 .func {
   font-family: var(--font-nanum-square);
@@ -28,4 +30,13 @@
 
 .button {
   cursor: pointer;
+
+.left {
+  position: absolute;
+  left: 12%;
+}
+
+.right {
+  position: absolute;
+  right: 12%;
 }

@@ -10,7 +10,6 @@ export interface PolaroidDiaryProps {
   photoUrl: string;
   emotion: Emotion;
   content: string;
-  clicked: boolean;
   tags?: string[];
 }
 
@@ -32,7 +31,6 @@ const PolaroidDiary: React.FC<PolaroidDiaryProps> = ({
       <div className={styles.character}>
         <EmotionCharacter emotion={emotion} />
       </div>
-
       <EmotionTagList tags={tags} />
     </div>
   </div>

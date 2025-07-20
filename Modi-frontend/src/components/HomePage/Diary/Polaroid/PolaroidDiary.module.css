@@ -1,8 +1,8 @@
 .container {
-  position: absolute;
-  top: 192px;
-  left: 50px;
-  right: 50px;
+  position: relative;
+  top: 80px;
+  width: 360px;
+  height: 580px;
 }
 
 .info {
