@@ -5,7 +5,11 @@ const DiaryStylePage = () => {
   return (
     <div className={styles.DiaryStyle_wrapper}>
       <div className={styles.DiaryStyle_container}>
-        <Header />
+        <Header
+          left="/icons/back.svg"
+          middle="일기 기록하기"
+          right="/icons/X.svg"
+        />
         <div className={styles.main_container}></div>
       </div>
     </div>

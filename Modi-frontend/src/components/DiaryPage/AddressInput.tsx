@@ -23,11 +23,11 @@ const AddressInput = () => {
     <>
       <div className={styles.input_section}>
         <input
-          type="text"
           placeholder="주소는 자동으로 입력돼요"
           value={draft.address}
-          onChange={(e) => setDraft({ address: e.target.value })}
           className={styles.input_field1}
+          readOnly
+          tabIndex={-1}
         />
         <button
           type="button"
@@ -39,13 +39,16 @@ const AddressInput = () => {
       </div>
 
       <BottomSheet isOpen={isSheetOpen} onClose={() => setIsSheetOpen(false)}>
-        <input
-          type="text"
-          placeholder="주소 검색"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className={styles.search_input} // 스타일 정의 필요
-        />
+        <div className={styles.search_container}>
+          <input
+            type="text"
+            placeholder="주소 검색"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className={styles.search_input}
+          />
+          <img className={styles.search_icon} src="/icons/black_search.svg" />
+        </div>
 
         <ul className={styles.address_list}>
           {filtered.map((addr, i) => (
