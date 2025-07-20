@@ -15,7 +15,7 @@
 
 .header_container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
@@ -30,6 +30,7 @@
 
 .button {
   cursor: pointer;
+}
 
 .left {
   position: absolute;
