@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import EmotionChip from "../../tag/EmotionChip/EmotionChip";
 import styles from "./EmotionTab.module.css";
 
@@ -32,8 +32,53 @@ export default function EmotionTab({
   onSelectEmotion,
   userCharacter,
 }: EmotionTabProps) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper) return;
+
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    const onMouseDown = (e: MouseEvent) => {
+      isDown = true;
+      startX = e.pageX - wrapper.offsetLeft;
+      scrollLeft = wrapper.scrollLeft;
+    };
+
+    const onMouseLeave = () => {
+      isDown = false;
+    };
+
+    const onMouseUp = () => {
+      isDown = false;
+    };
+
+    const onMouseMove = (e: MouseEvent) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - wrapper.offsetLeft;
+      const walk = (x - startX) * 1; // 1배속 스크롤
+      wrapper.scrollLeft = scrollLeft - walk;
+    };
+
+    wrapper.addEventListener("mousedown", onMouseDown);
+    wrapper.addEventListener("mouseleave", onMouseLeave);
+    wrapper.addEventListener("mouseup", onMouseUp);
+    wrapper.addEventListener("mousemove", onMouseMove);
+
+    return () => {
+      wrapper.removeEventListener("mousedown", onMouseDown);
+      wrapper.removeEventListener("mouseleave", onMouseLeave);
+      wrapper.removeEventListener("mouseup", onMouseUp);
+      wrapper.removeEventListener("mousemove", onMouseMove);
+    };
+  }, []);
+
   return (
-    <div className={styles.wrapper}>
+    <div ref={wrapperRef} className={styles.wrapper}>
       {DEFAULT_EMOTIONS.map((emotion) => (
         <EmotionChip
           key={emotion}
