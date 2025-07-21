@@ -12,7 +12,11 @@ const DiaryKeywordPage = () => {
   return (
     <div className={styles.DiaryKeyword_wrapper}>
       <div className={styles.DiaryKeyword_container}>
-        <Header />
+        <Header
+          left="/icons/back.svg"
+          middle="일기 기록하기"
+          right="/icons/X.svg"
+        />
         <div className={styles.main_container}>
           <KeywordInput />
           {draft.keywords.length < 3 ? (

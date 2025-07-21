@@ -15,7 +15,7 @@
 
 .header_container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
@@ -26,6 +26,10 @@
   line-height: 22px;
   letter-spacing: -0.43px;
   text-align: center;
+}
+
+.button {
+  cursor: pointer;
 }
 
 .left {
