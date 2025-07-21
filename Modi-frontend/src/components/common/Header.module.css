@@ -1,7 +1,8 @@
 .header_wrapper {
   position: absolute;
   top: 0;
-  width: 360px;
+  width: 100%;
+  max-width: 400px;
   box-sizing: border-box;
   height: 140px;
   background-color: #fbf9f3;

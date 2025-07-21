@@ -67,10 +67,12 @@
 }
 
 .content {
-  position: relative;
-  top: 80px;
-  width: 360px;
-  height: 580px;
+  padding-top: 0px;
+  width: 100%;
+  max-width: 400px; /* 최대 크기는 모바일 기준 */
+  height: auto; /* 내용물에 맞게 */
+  margin: 0 auto; /* 가운데 정렬 */
+  box-sizing: border-box;
 }
 
 .carousel {
@@ -122,5 +124,14 @@
   display: flex;
   justify-content: center;
   gap: 160px;
+  padding: 0 16px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
   padding: 0 16px;
 }
