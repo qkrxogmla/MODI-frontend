@@ -11,6 +11,7 @@ import DiaryEmotionTag from "../pages/diary/DiaryEmotionTag";
 import DiaryKeywordPage from "../pages/diary/DiaryKeywordPage";
 import DiaryStylePage from "../pages/diary/DiaryStylePage";
 import OAuthCallbackPage from "../pages/oauth/OAuthCallbakPage";
+import Setting from "../pages/setting/Setting";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -65,6 +66,10 @@ const Router = () => {
     {
       path: "/oauth/callback",
       element: <OAuthCallbackPage />,
+    },
+    {
+      path: "/setting",
+      element: <Setting />,
     },
   ]);
   return <RouterProvider router={router} />;
