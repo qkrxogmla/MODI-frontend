@@ -1,9 +1,8 @@
 .card {
   display: flex;
-  width: 296px;
-  height: 94px;
   padding: 18px;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 36px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
@@ -14,9 +13,17 @@
 }
 
 .frame {
+  height: 58px;
   display: flex;
   align-items: center;
-  gap: 10.796px;
+  gap: 36px;
+}
+
+.frame_info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10.8px;
 }
 
 .profileImg {
