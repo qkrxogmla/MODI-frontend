@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./ProfileCard.module.css";
 import EditButton from "../../../components/common/button/ButtonIcon/EditButton";
 import profileImg from "../../../../public/icons/profile_img.svg";
@@ -10,9 +10,13 @@ export interface ProfileCardProps {
 
 export default function ProfileCard({ nickname, email }: ProfileCardProps) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleEdit = () => {
-    navigate("/information-setting");
+    navigate("/information-setting", {
+      state: { from: location.pathname },
+      replace: false, // 원하는 옵션
+    });
   };
   return (
     <div className={styles.card}>

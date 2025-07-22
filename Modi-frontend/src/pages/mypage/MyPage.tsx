@@ -3,6 +3,7 @@ import style from "./MyPage.module.css";
 import Header from "../../components/common/Header";
 import ProfileCard from "../../components/MyPage/Profile/ProfileCard";
 import TabBar from "../../components/MyPage/TabBar";
+import Footer from "../../components/common/Footer";
 
 const MyPage = () => {
   return (
@@ -19,6 +20,7 @@ const MyPage = () => {
         <div className={style.tab_bar}>
           <TabBar />
         </div>
+        <Footer />
       </div>
     </div>
   );
