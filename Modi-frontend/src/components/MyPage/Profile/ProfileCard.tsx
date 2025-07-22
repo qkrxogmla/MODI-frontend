@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./ProfileCard.module.css";
 import EditButton from "../../../components/common/button/ButtonIcon/EditButton";
 import profileImg from "../../../../public/icons/profile_img.svg";
@@ -8,6 +9,11 @@ export interface ProfileCardProps {
 }
 
 export default function ProfileCard({ nickname, email }: ProfileCardProps) {
+  const navigate = useNavigate();
+
+  const handleEdit = () => {
+    navigate("/information-setting");
+  };
   return (
     <div className={styles.card}>
       <div className={styles.frame}>
@@ -22,8 +28,9 @@ export default function ProfileCard({ nickname, email }: ProfileCardProps) {
             <div className={styles.email}>{email}</div>
           </div>
         </div>
-
-        <EditButton />
+        <button onClick={handleEdit} className={styles.editBtn}>
+          <EditButton />
+        </button>
       </div>
     </div>
   );
