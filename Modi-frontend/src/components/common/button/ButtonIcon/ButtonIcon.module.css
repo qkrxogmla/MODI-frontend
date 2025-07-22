@@ -17,3 +17,19 @@
   height: 100%;
   flex-shrink: 0;
 }
+
+.edit_icon {
+  width: 21.818px;
+  height: 21.818px;
+  flex-shrink: 0;
+}
+
+.edit_container {
+  width: 40px;
+  height: 40px;
+  padding: 7px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid var(--gray2, #cbcbc5);
+  background: #eeedeb;
+}

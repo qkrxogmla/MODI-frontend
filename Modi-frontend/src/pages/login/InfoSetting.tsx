@@ -1,13 +1,19 @@
 import { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Header from "../../components/common/Header";
 import styles from "./InfoSetting.module.css";
 import PrimaryButton from "../../components/common/button/ButtonBar/PrimaryButton";
 import { useCharacter } from "../../contexts/CharacterContext";
 
+interface LocationState {
+  from?: string;
+}
+
 const InitialSetting = () => {
   const { setCharacter } = useCharacter();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = (location.state as LocationState)?.from;
   const [selectedCharacter, setSelectedCharacter] = useState<string>("");
   const completeBtnRef = useRef<HTMLButtonElement>(null);
 
@@ -21,7 +27,11 @@ const InitialSetting = () => {
   };
 
   const handleComplete = () => {
-    navigate("/home"); // 홈으로 이동
+    if (location.state?.from === "/mypage") {
+      navigate("/mypage");
+    } else {
+      navigate("/home"); //홈으로 이동
+    }
   };
 
   return (

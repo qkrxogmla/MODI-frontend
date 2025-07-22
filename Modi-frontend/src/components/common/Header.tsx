@@ -23,6 +23,9 @@ const Header = ({ left, middle, right, write, edit }: HeaderProps) => {
         navigate(-1);
       }
     }
+    if (left === "/icons/setting.svg") {
+      navigate("/setting");
+    }
   };
 
   const handleRightClick = () => {
