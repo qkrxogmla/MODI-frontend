@@ -24,6 +24,8 @@ const BottomSheet = ({
   const [currentHeight, setCurrentHeight] = useState<number | null>(null);
   const threshold = 100;
 
+  const isDragging = useRef(false);
+
   // 창 크기 바뀔 때 maxHeight 다시 계산
   useEffect(() => {
     const updateMaxHeight = () => setMaxHeight(window.innerHeight * 0.88);
@@ -101,6 +103,55 @@ const BottomSheet = ({
 
   if (!isOpen) return null;
 
+  // 컴퓨터 조작 추가
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    startY.current = e.clientY;
+    if (sheetRef.current) {
+      setCurrentHeight(sheetRef.current.getBoundingClientRect().height);
+    }
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
+    if (!isDragging.current) return;
+    const deltaY = e.clientY - startY.current;
+    const newHeight = (currentHeight ?? maxHeight) - deltaY;
+    const clampedHeight = Math.max(minHeight, Math.min(maxHeight, newHeight));
+    setTranslateY(deltaY);
+    if (sheetRef.current) {
+      sheetRef.current.style.height = `${clampedHeight}px`;
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+
+    if (translateY > threshold) {
+      if (minimizeOnDrag) {
+        setIsMinimized(true);
+      } else {
+        onClose();
+      }
+    } else if (translateY < -threshold && minimizeOnDrag && isMinimized) {
+      setIsMinimized(false);
+    } else {
+      if (sheetRef.current) {
+        sheetRef.current.style.height = isMinimized
+          ? `${minHeight}px`
+          : `${maxHeight}px`;
+      }
+    }
+
+    setTranslateY(0);
+
+    document.removeEventListener("mousemove", handleMouseMove);
+    document.removeEventListener("mouseup", handleMouseUp);
+  };
+
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div
@@ -111,7 +162,7 @@ const BottomSheet = ({
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <div className={styles.handle} />
+        <div className={styles.handle} onMouseDown={handleMouseDown} />
         <div className={styles.content}>{children}</div>
       </div>
     </div>
