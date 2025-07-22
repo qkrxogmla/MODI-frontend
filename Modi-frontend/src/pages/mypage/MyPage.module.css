@@ -21,3 +21,16 @@
   background-position: top center;
   background-repeat: no-repeat;
 }
+
+.content {
+  position: absolute;
+  top: 163px;
+}
+
+.tab_bar {
+  display: flex;
+
+  position: absolute;
+  top: 285px;
+  left: 50px;
+}
