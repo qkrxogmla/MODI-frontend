@@ -106,6 +106,7 @@ const DiaryWritePage = () => {
           left="/icons/back.svg"
           middle="일기 기록하기"
           right="/icons/X.svg"
+          write={true}
         />
         <div className={styles.main_container}>
           {/* 사진 첨부 */}
