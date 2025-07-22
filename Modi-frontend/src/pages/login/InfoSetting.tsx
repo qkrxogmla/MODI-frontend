@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/common/Header";
-import styles from "./InitialSetting.module.css";
+import styles from "./InfoSetting.module.css";
 import PrimaryButton from "../../components/common/button/ButtonBar/PrimaryButton";
 import { useCharacter } from "../../contexts/CharacterContext";
 

@@ -4,6 +4,7 @@ import PrimaryButton from "../../components/common/button/ButtonBar/PrimaryButto
 import { useNavigate } from "react-router-dom";
 import KeywordInput from "../../components/DiaryPage/KeywordInput";
 import { useDiaryDraft } from "../../hooks/useDiaryDraft";
+import FrequentKeywords from "../../components/common/keyword/FrequentKeywords";
 
 const DiaryKeywordPage = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const DiaryKeywordPage = () => {
           left="/icons/back.svg"
           middle="일기 기록하기"
           right="/icons/X.svg"
+          write={true}
         />
         <div className={styles.main_container}>
           <KeywordInput />
@@ -25,7 +27,7 @@ const DiaryKeywordPage = () => {
               키워드를 3개 이상 입력해주세요
             </p>
           ) : null}
-          <p className={styles.title}>키워드 사용 기록</p>
+          <FrequentKeywords />
         </div>
         <PrimaryButton
           location="next"
