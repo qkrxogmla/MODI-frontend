@@ -77,9 +77,9 @@ const Header = ({ left, middle, right, write, edit }: HeaderProps) => {
         <Popup
           title={
             write
-              ? "작성한 일기가 저장되지 않아요! 화면을 닫을까요?"
+              ? "작성한 일기가 저장되지 않아요!\n화면을 닫을까요?"
               : edit
-              ? "수정한 일기가 저장되지 않아요! 화면을 닫을까요?"
+              ? "수정한 일기가 저장되지 않아요!\n화면을 닫을까요?"
               : ""
           }
           buttons={[

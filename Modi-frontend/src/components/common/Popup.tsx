@@ -4,16 +4,32 @@ interface PopupProps {
   title: string;
   description?: string;
   imageUrl?: string;
+  showCloseButton?: boolean;
+  onClose?: () => void;
   buttons: {
     label: string;
     onClick: () => void;
   }[];
 }
 
-const Popup = ({ title, description, imageUrl, buttons }: PopupProps) => {
+const Popup = ({
+  title,
+  description,
+  onClose,
+  imageUrl,
+  showCloseButton = false,
+  buttons,
+}: PopupProps) => {
   return (
     <div className={styles.popup_overlay}>
       <div className={styles.popup_box}>
+        {/* X 버튼 */}
+        {showCloseButton && (
+          <div className={styles.close_button_wrapper} onClick={onClose}>
+            <img className={styles.close_button} src="/icons/X.svg" />
+          </div>
+        )}
+
         {/* 이미지 (옵션) */}
         {imageUrl && (
           <img
