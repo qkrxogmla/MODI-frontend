@@ -6,7 +6,7 @@ import DateSelector, {
   DiaryItem,
 } from "../../components/HomePage/DateSelect/DateSelector";
 import ButtonBar from "../../components/common/button/ButtonBar/PrimaryButton";
-import Modal from "../../components/common/Modal";
+import BottomSheet from "../../components/common/BottomSheet";
 import PolaroidFrame from "../../components/HomePage/Diary/Polaroid/PolaroidFrame";
 import EmotionCharacter from "../../components/HomePage/Diary/Polaroid/EmotionCharacter";
 import EmotionTagList from "../../components/HomePage/Diary/Polaroid/EmotionTagList";
@@ -27,7 +27,7 @@ export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
   );
   const [viewDate, setViewDate] = useState(() => allDates.at(-1)!);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   // 현재 인덱스
   const currentIdx = allDates.indexOf(viewDate);
@@ -61,10 +61,7 @@ export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
         currentDate={viewDate}
         onPrev={handlePrev}
         onNext={handleNext}
-        onOpenModal={() => {
-          console.log(">> PolaroidView: onOpenModal 호출");
-          setIsModalOpen(true);
-        }}
+        onOpenModal={() => setIsSheetOpen(true)}
         onSwitchView={onSwitchView}
       />
       {/* ← 프레임만 캐러셀로 감싸기 */}
@@ -96,7 +93,11 @@ export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
       </div>
 
       {/* 날짜 선택 모달 */}
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <BottomSheet
+        isOpen={isSheetOpen}
+        onClose={() => setIsSheetOpen(false)}
+        minimizeOnDrag={true} // 드래그 시 최소화 기능 원하면 true
+      >
         <div className={pageStyles.modalInner}>
           <h3 className={pageStyles.modalTitle}>다른 날짜 일기 보기</h3>
 
@@ -104,9 +105,9 @@ export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
             viewType="polaroid"
             items={allDates.map((d) => ({ date: d }))}
             initialDate={viewDate}
-            onChange={(d) => {
-              setViewDate(d);
-              setIsModalOpen(false);
+            onChange={(newDate) => {
+              setViewDate(newDate);
+              setIsSheetOpen(false);
             }}
             userCharacter={character!}
           />
@@ -115,12 +116,12 @@ export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
           <ButtonBar
             location="modal"
             label="확인"
-            onClick={() => setIsModalOpen(false)}
+            onClick={() => setIsSheetOpen(false)}
             size="primary"
             disabled={false}
           />
         </div>
-      </Modal>
+      </BottomSheet>
     </div>
   );
 }
