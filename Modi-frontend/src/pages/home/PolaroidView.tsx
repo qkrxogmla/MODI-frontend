@@ -1,6 +1,5 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import pageStyles from "./HomePage.module.css";
-import { useNavigate } from "react-router-dom";
 import HomeHeader from "../../components/HomePage/HomeHeader/HomeHeader";
 import DateSelector, {
   DiaryItem,
@@ -18,7 +17,8 @@ interface PolaroidViewProps {
 }
 
 export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
-  const navigate = useNavigate();
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const hasOpened = useRef(false);
   const { character } = useCharacter();
 
   const allDates = useMemo(
@@ -26,8 +26,6 @@ export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
     []
   );
   const [viewDate, setViewDate] = useState(() => allDates.at(-1)!);
-
-  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   // 현재 인덱스
   const currentIdx = allDates.indexOf(viewDate);
@@ -51,6 +49,23 @@ export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
   const handleNext = () => {
     const idx = allDates.indexOf(viewDate);
     if (idx < allDates.length - 1) setViewDate(allDates[idx + 1]);
+  };
+
+  // 모달 열릴 때마다 초기화
+  useEffect(() => {
+    if (isSheetOpen) {
+      hasOpened.current = false;
+    }
+  }, [isSheetOpen]);
+
+  const handleChange = (newDate: string) => {
+    setViewDate(newDate);
+
+    if (hasOpened.current) {
+      setIsSheetOpen(false); // 두 번째 이후부터 닫힘
+    } else {
+      hasOpened.current = true; // 첫 호출은 무시
+    }
   };
 
   return (
@@ -105,10 +120,7 @@ export default function PolaroidView({ onSwitchView }: PolaroidViewProps) {
             viewType="polaroid"
             items={allDates.map((d) => ({ date: d }))}
             initialDate={viewDate}
-            onChange={(newDate) => {
-              setViewDate(newDate);
-              setIsSheetOpen(false);
-            }}
+            onChange={handleChange}
             userCharacter={character!}
           />
         </div>
