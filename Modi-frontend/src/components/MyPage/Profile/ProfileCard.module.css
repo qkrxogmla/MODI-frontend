@@ -69,14 +69,10 @@
 }
 
 .editBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   display: flex;
-  width: 40px;
-  height: 40px;
-  padding: 7px;
-  justify-content: center;
   align-items: center;
-  flex-shrink: 0;
-  border-radius: 20px;
-  border: 1px solid var(--gray2, #cbcbc5);
-  background: #eeedeb;
+  justify-content: center;
 }

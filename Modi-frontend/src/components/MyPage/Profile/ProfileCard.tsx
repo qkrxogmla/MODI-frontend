@@ -32,9 +32,9 @@ export default function ProfileCard({ nickname, email }: ProfileCardProps) {
             <div className={styles.email}>{email}</div>
           </div>
         </div>
-        <button onClick={handleEdit} className={styles.editBtn}>
+        <div onClick={handleEdit} className={styles.editBtn}>
           <EditButton />
-        </button>
+        </div>
       </div>
     </div>
   );
