@@ -44,3 +44,9 @@
   gap: 7.22px;
   padding: 13px;
 }
+
+.chartSection {
+  position: absolute;
+  top: 370px;
+  left: 53px;
+}
