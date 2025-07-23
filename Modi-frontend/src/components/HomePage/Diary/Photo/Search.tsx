@@ -5,11 +5,11 @@ import {
 } from "../../../../contexts/CharacterContext";
 import style from "./Search.module.css";
 
-import momoSvg from "images/search-character/search-momo.svg";
-import boroSvg from "images/search-character/search-boro.svg";
-import lumiSvg from "images/search-character/search-lumi.svg";
-import zuniSvg from "images/search-character/search-zuni.svg";
-import defaultSvg from "images/search-character/search-momo.svg";
+import momoSvg from "/images/search-character/search_momo.svg";
+import boroSvg from "/images/search-character/search_boro.svg";
+import lumiSvg from "/images/search-character/search_lumi.svg";
+import zuniSvg from "/images/search-character/search_zuni.svg";
+import defaultSvg from "/images/search-character/search_momo.svg";
 
 type Character = "momo" | "boro" | "lumi" | "zuni" | null;
 
