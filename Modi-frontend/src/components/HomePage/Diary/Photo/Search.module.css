@@ -15,6 +15,12 @@
   background-color: transparent;
 }
 
+.smallSvg {
+  width: 35%;
+  height: 35%;
+  background-color: transparent;
+}
+
 .text {
   width: 191px;
   color: var(--gray3, #9c9c9c);

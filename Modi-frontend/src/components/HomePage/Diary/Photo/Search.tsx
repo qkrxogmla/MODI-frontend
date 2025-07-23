@@ -27,12 +27,16 @@ export default function CharacterImage() {
 
   const src = svgMap.get(character) ?? defaultSvg;
 
+  const isSmall = character === "zuni";
+
   return (
     <div className={style.searchCharacterContainer}>
       <img
         src={src}
         alt={character ? `${character} 아이콘` : "기본 아이콘"}
-        className={style.searchCharacterImage}
+        className={`${style.searchCharacterImage} ${
+          isSmall ? style.smallSvg : ""
+        }`}
       />
       <span className={style.text}>작성한 기록이 없습니다</span>
     </div>
