@@ -42,6 +42,8 @@ const DateSelector: React.FC<Props> = ({
     [items]
   );
 
+  const hasMounted = useRef(false);
+
   const months = useMemo(
     () =>
       Array.from(
@@ -102,6 +104,11 @@ const DateSelector: React.FC<Props> = ({
 
   // state가 바뀔 때 마다 onChange 호출
   useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+
     if (viewType === "polaroid") onChange(`${year}-${month}-${day}`);
     else onChange(`${year}-${month}`);
   }, [year, month, day]);
