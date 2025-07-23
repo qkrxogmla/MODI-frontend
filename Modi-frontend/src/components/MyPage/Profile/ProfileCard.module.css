@@ -50,6 +50,7 @@
   font-feature-settings: "liga" off, "clig" off;
 
   font-family: "NanumSquareRound", sans-serif;
+  --font-nanum-square: "NanumSquareRoundBold";
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
