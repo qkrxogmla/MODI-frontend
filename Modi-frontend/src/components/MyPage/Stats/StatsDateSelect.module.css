@@ -33,3 +33,93 @@
   display: flex;
   align-items: center;
 }
+
+.sheetHeader {
+  align-self: stretch;
+  color: var(--gray5, #2c2c2c);
+  font-feature-settings: "liga" off, "clig" off;
+
+  /* headline */
+  font-family: "NanumSquareRound";
+  --font-nanum-square: "NanumSquareRoundBold", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px; /* 137.5% */
+  letter-spacing: -0.43px;
+
+  position: relative;
+  top: 20px;
+}
+
+.picker {
+  position: relative;
+  display: flex;
+  gap: 8px; /* 년/월 사이 간격 */
+  height: 200px;
+  padding: 16px 0;
+
+  text-align: center;
+  font-feature-settings: "liga" off, "clig" off;
+  /* sudheadline */
+  font-family: "NanumSquareRound";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -0.23px;
+}
+
+/* ─ 가로 하이라이트 바 ─────────────────────────── */
+.picker::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 28px; /* 디자인 바 높이 */
+  transform: translateY(-50%);
+  background-color: #fbd7d5;
+  border-radius: 7px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── 스크롤 칼럼 ────────────────────────────────── */
+.column {
+  flex: 1;
+  height: 200px; /* 보이는 높이 */
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  position: relative;
+  z-index: 1; /* 하이라이트 위에 떠야 아이템 보임 */
+}
+.column::-webkit-scrollbar {
+  display: none;
+}
+.column {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── 옵션 하나 ─────────────────────────────────── */
+.option {
+  height: 40px; /* 옵션 높이 */
+  line-height: 40px; /* 텍스트 수직 정렬 */
+  text-align: center;
+  scroll-snap-align: center;
+  color: #bbb; /* 미선택 시 회색 */
+  user-select: none;
+  font-size: 16px;
+}
+
+/* ── 선택된 옵션 ───────────────────────────────── */
+.selected {
+  color: #404040; /* 진한 회색 */
+  font-weight: 600; /* 굵게 */
+}
+
+/* ── 확인 버튼 등 나머지 그대로 ───────────────── */
+.footerWrapper {
+  padding: 0 16px 24px;
+}
