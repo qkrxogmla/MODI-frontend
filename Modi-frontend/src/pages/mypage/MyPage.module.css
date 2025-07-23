@@ -34,3 +34,13 @@
   top: 285px;
   left: 50px;
 }
+
+.photoGrid {
+  position: absolute;
+  top: 310px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7.22px;
+  padding: 13px;
+}
