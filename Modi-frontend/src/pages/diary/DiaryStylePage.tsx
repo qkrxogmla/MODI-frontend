@@ -1,7 +1,12 @@
 import styles from "./DiaryStylePage.module.css";
 import Header from "../../components/common/Header";
+import BottomSheet from "../../components/common/BottomSheet";
+import Tab from "../../components/common/tab/Tab";
+import { useState } from "react";
 
 const DiaryStylePage = () => {
+  const [selectedTab, setSelectedTab] = useState("한줄요약");
+
   return (
     <div className={styles.DiaryStyle_wrapper}>
       <div className={styles.DiaryStyle_container}>
@@ -11,7 +16,27 @@ const DiaryStylePage = () => {
           right="/icons/X.svg"
           write={true}
         />
-        <div className={styles.main_container}></div>
+        <div className={styles.main_container}>
+          <BottomSheet isOpen={true} onClose={() => {}} minimizeOnDrag={true}>
+            <div className={styles.tab_container}>
+              <Tab
+                label="한줄요약"
+                selected={selectedTab === "한줄요약"}
+                onClick={() => setSelectedTab("한줄요약")}
+              />
+              <Tab
+                label="언어스타일"
+                selected={selectedTab === "언어스타일"}
+                onClick={() => setSelectedTab("언어스타일")}
+              />
+              <Tab
+                label="템플릿"
+                selected={selectedTab === "템플릿"}
+                onClick={() => setSelectedTab("템플릿")}
+              />
+            </div>
+          </BottomSheet>
+        </div>
       </div>
     </div>
   );
