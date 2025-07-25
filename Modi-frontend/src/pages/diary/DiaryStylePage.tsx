@@ -3,6 +3,9 @@ import Header from "../../components/common/Header";
 import BottomSheet from "../../components/common/BottomSheet";
 import Tab from "../../components/common/tab/Tab";
 import { useState } from "react";
+import Summary from "../../components/DiaryPage/Summary";
+import LanguageStyle from "../../components/DiaryPage/LanguageStyle";
+import Template from "../../components/DiaryPage/Template";
 
 const DiaryStylePage = () => {
   const [selectedTab, setSelectedTab] = useState("한줄요약");
@@ -35,6 +38,13 @@ const DiaryStylePage = () => {
                 onClick={() => setSelectedTab("템플릿")}
               />
             </div>
+            {selectedTab === "한줄요약" ? (
+              <Summary />
+            ) : selectedTab === "언어스타일" ? (
+              <LanguageStyle />
+            ) : (
+              <Template />
+            )}
           </BottomSheet>
         </div>
       </div>
