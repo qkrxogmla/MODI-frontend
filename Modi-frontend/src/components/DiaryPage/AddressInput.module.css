@@ -69,3 +69,8 @@
 .address_item + li {
   border-top: 1px solid var(--color-gray1);
 }
+
+.input_field1::placeholder {
+  color: var(--color-gray3);
+  opacity: 1;
+}
