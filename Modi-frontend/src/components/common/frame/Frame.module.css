@@ -5,16 +5,16 @@
   flex-direction: column;
   position: relative;
   box-sizing: border-box;
-  width: 260px;
-  height: 338px;
-  padding: 16px;
-  gap: 16px;
+  width: 247px;
+  height: 346px;
+  padding: 16px 16px 12px 16px;
+  gap: 12px;
   justify-content: center;
   align-items: center;
   background-image: url("/images/frame-bg/basic-frame/star.svg"); /* 테스트용... */
   background-size: cover;
   background-position: center;
-  border-radius: 13.3px;
+  border-radius: 15px;
   border: 0.95px solid var (--gray3, #9c9c9c);
   /* 배경색은 state로 추출해서 사용해야 할 것 같음 -> 이미지로 떼우는 게 나을듯? 
     일기 내용 한 줄 요약을 입력요소로 받는 경우엔 취소해야겠지만... */
@@ -25,9 +25,9 @@
 .image-frame {
   position: absolute;
   top: 20px;
-  width: 227px;
-  height: 262px;
-  border-radius: 2.85px;
+  width: 215px;
+  height: 286px;
+  border-radius: 5px;
   border: none;
 }
 
@@ -70,60 +70,3 @@
   line-height: 19.303px; /* 113.546% */
   background-color: none;
 }
-
-/* 프레임 배경화면
-.bg-pink {
-  background-image: url("../../public/images/frame-bg/pink.svg");
-}
-
-.bg-yellow {
-  background-image: url("../../public/images/frame-bg/yellow.svg");
-}
-
-.bg-mint {
-  background-image: url("../../public/images/frame-bg/basic-frame/mint.svg");
-}
-
-.bg-skyblue {
-  background-image: url("../../public/images/frame-bg/basic-frame/skyblue.svg");
-}
-
-.bg-star {
-  background-image: url("../../public/images/frame-bg/basic-frame/star.svg");
-  background-size: cover;
-  background-position: center;
-}
-
-.bg-small-dot {
-  background-image: url("../../public/images/frame-bg/basic-frame/small-dot.svg");
-  background-size: cover;
-  background-position: center;
-}
-
-.bg-cream {
-  background-image: url("../../public/images/frame-bg/basic-frame/cream.svg");
-}
-
-.bg-big-dot {
-  background-image: url("../../public/images/frame-bg/basic-frame/big-dot.svg");
-  background-size: cover;
-  background-position: center;
-} 
-
-.bg-ch1 {
-  background-image: url("../../public/images/frame-bg/basic-frame/pink.svg");
-}
-
-.bg-ch2 {
-  background-image: url("../../public/images/frame-bg/basic-frame/yellow.svg");
-}
-
-.bg-ch3 {
-  background-image: url("../../public/images/frame-bg/basic-frame/skyblue.svg");
-}
-
-.bg-ch4 {
-  background-image: url("../../public/images/frame-bg/basic-frame/mint.svg");
-}
-
-*/

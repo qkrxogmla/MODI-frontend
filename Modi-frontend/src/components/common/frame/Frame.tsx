@@ -6,7 +6,7 @@ const Frame = () => {
       <div className={styles["image-frame"]}>
         <img
           className={styles.image}
-          src="https://placehold.co/227x262"
+          src="https://placehold.co/215x286"
           alt="사진"
         />
         <span className={styles.date}>25.5.13 12:17</span>
