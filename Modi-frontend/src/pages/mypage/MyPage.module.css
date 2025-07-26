@@ -47,6 +47,9 @@
 
 .chartSection {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   top: 370px;
   left: 53px;
 }

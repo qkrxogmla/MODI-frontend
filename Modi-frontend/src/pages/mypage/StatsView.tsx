@@ -3,6 +3,7 @@ import { allDiaries, Diary } from "../../data/diaries";
 import StatsDateSelect from "../../components/MyPage/Stats/StatsDateSelect";
 import styles from "./MyPage.module.css";
 import EmotionStatsCard from "../../components/MyPage/Stats/StatsCard/EmotionStatsCard";
+import StyleStats from "../../components/MyPage/Stats/StatsCard/StyleStats";
 
 type Emotion = Diary["emotion"];
 
@@ -45,6 +46,7 @@ export default function StatsView() {
       {/* 통계 차트 영역 */}
       <div className={styles.chartSection}>
         <EmotionStatsCard />
+        <StyleStats />
       </div>
     </div>
   );
