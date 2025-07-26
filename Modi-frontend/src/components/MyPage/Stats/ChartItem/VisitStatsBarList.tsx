@@ -1,40 +1,30 @@
 import StyleBar from "./StyleStatsBar";
 import style from "./StyleStatsBar.module.css";
+import { useCharacter } from "../../../../contexts/CharacterContext";
 
 const MAX_BAR_HEIGHT = 70;
 
-const styleData = [
-  {
-    label: "영통동",
-    value: 15,
-    icon: "/images/character-statsbar/momo/momo_head.svg",
-  },
-  {
-    label: "경희대",
-    value: 7,
-    icon: "/images/character-statsbar/momo/momo_head.svg",
-  },
-  {
-    label: "서천동",
-    value: 5,
-    icon: "/images/character-statsbar/momo/momo_head.svg",
-  },
-  {
-    label: "행궁동",
-    value: 2,
-    icon: "/images/character-statsbar/momo/momo_head.svg",
-  },
-];
+export default function VisitStatsBarList() {
+  const { character } = useCharacter();
 
-const max = Math.max(...styleData.map((d) => d.value));
+  if (!character) return null;
 
-const normalized = styleData.map((d) => {
-  const height = (d.value / max) * MAX_BAR_HEIGHT;
-  console.log(`${d.label} → ${height}px`);
-  return { ...d, height };
-});
+  const iconPath = `/images/character-statsbar/${character}/${character}_head.svg`;
 
-export default function StyleBarList() {
+  const styleData = [
+    { label: "영통동", value: 15, icon: iconPath },
+    { label: "경희대", value: 7, icon: iconPath },
+    { label: "서천동", value: 5, icon: iconPath },
+    { label: "행궁동", value: 2, icon: iconPath },
+  ];
+  const max = Math.max(...styleData.map((d) => d.value));
+
+  const normalized = styleData.map((d) => {
+    const height = (d.value / max) * MAX_BAR_HEIGHT;
+    console.log(`${d.label} → ${height}px`);
+    return { ...d, height };
+  });
+
   return (
     <div className={style.barList}>
       {normalized.map(({ label, value, height, icon }) => (
