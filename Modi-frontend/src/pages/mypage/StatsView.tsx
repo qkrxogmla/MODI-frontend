@@ -37,18 +37,21 @@ export default function StatsView() {
 
   return (
     <div className={styles.statsContainer}>
-      {/* Stats 전용 월 선택 */}
-      <StatsDateSelect
-        months={allMonths}
-        initialMonth={month}
-        onMonthChange={setMonth}
-      />
+      <div className={styles.fixedTop}>
+        <StatsDateSelect
+          months={allMonths}
+          initialMonth={month}
+          onMonthChange={setMonth}
+        />
+      </div>
 
       {/* 통계 차트 영역 */}
-      <div className={styles.chartSection}>
-        <EmotionStatsCard />
-        <StyleStats />
-        <VisitStats />
+      <div className={styles.scrollWrapper}>
+        <div className={styles.chartSection}>
+          <EmotionStatsCard />
+          <StyleStats />
+          <VisitStats />
+        </div>
       </div>
     </div>
   );
