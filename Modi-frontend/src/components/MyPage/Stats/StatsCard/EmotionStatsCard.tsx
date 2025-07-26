@@ -11,8 +11,9 @@ export default function EmotionStatsCard() {
     { label: "사랑", value: 5 },
     { label: "놀람", value: 2 },
   ];
-
+  if (!character) return null;
   const maxValue = Math.max(...data.map((item) => item.value));
+  const maxEmotion = data.find((item) => item.value === maxValue)?.label;
 
   const emotionKeyMap: { [label: string]: string } = {
     기쁨: "happy",
@@ -37,11 +38,14 @@ export default function EmotionStatsCard() {
     ...item,
     icon: getEmotionIconPath(character, item.label, item.value === maxValue),
   }));
+  const sortedData = [...enrichedData].sort((a, b) => b.value - a.value);
 
   return (
     <div className={styles.card}>
-      <h3 className={styles.title}>한달 중 가장 많이 기뻤어요</h3>
-      <EmotionCircleList data={enrichedData} />
+      <h3 className={styles.title}>
+        한달 중 {maxEmotion} 감정을 가장 많이 느꼈어요
+      </h3>
+      <EmotionCircleList data={sortedData} />
     </div>
   );
 }

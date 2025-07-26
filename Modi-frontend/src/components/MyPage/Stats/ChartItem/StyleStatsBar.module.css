@@ -22,7 +22,7 @@
   z-index: 1;
 }
 
-.barFill {
+.bar {
   width: 25px;
   background-color: #eeedeb;
   animation: growUp 0.8s ease-out;

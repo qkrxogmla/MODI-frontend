@@ -19,21 +19,33 @@ export default function VisitStatsBarList() {
   ];
   const max = Math.max(...styleData.map((d) => d.value));
 
-  const normalized = styleData.map((d) => {
-    const height = (d.value / max) * MAX_BAR_HEIGHT;
-    console.log(`${d.label} → ${height}px`);
-    return { ...d, height };
-  });
+  const maxBarColorMap: Record<string, string> = {
+    momo: "#FBD7D5",
+    boro: "#FEE888",
+    lumi: "#A7E1B6",
+    zuni: "#93D1E0",
+  };
+
+  const normalized = styleData
+    .sort((a, b) => b.value - a.value) // 내림차순 정렬
+    .map((d) => ({
+      ...d,
+      height: (d.value / max) * MAX_BAR_HEIGHT,
+      isMax: d.value === max,
+      icon: iconPath,
+    }));
 
   return (
     <div className={style.barList}>
-      {normalized.map(({ label, value, height, icon }) => (
+      {normalized.map(({ label, value, height, icon, isMax }) => (
         <StyleBar
           key={label}
           label={label}
           value={value}
           height={height}
           icon={icon}
+          isMax={isMax}
+          maxColor={maxBarColorMap[character]}
         />
       ))}
     </div>
